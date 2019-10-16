@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -19,4 +19,20 @@
 
 .App-link {
   color: #09d3ac;
+} */
+
+.spotify-discography-home {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+
+.search-box {
+  text-align: center;
+  min-height: 100vh;
+}
+
+.search-placeholder {
+  color: white;
+  text-decoration: underline;
 }

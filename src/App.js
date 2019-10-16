@@ -30,9 +30,9 @@ import "./App.css";
 function Home() {
   return (
     <div className="search-box">
-      <div>
-        <Link to="/search">Search</Link>
-      </div>
+      <Link to="/search">
+        <span className="search-placeholder">Search</span>
+      </Link>
     </div>
   );
 }
@@ -40,7 +40,7 @@ function Home() {
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="spotify-discography-home">
         <Router>
           <Route exact path="/" render={routeProps => <Home />} />
           <Route
