@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "../App.css";
+import { Route } from "react-router-dom";
 
 class Artist extends Component {
   constructor(props) {
@@ -6,11 +8,20 @@ class Artist extends Component {
   }
 
   render() {
+    const artist = this.props.artist;
     return (
-      <div></div>
+      <div className="artist">
+        <Route
+          render={({ history }) => (
+            <a href="" onClick={() => history.push("/artist/" + artist.id)}>
+              <img className="artistImage" alt="" src={artist.images[1].url} />
+              <div className="albumName">{artist.name}</div>
+            </a>
+          )}
+        ></Route>
+      </div>
     );
   }
 }
-
 
 export default Artist;

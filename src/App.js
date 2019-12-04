@@ -1,31 +1,10 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import SearchSpotify from "./components/SearchSpotify";
-import Artist from "./components/Artist";
-import Album from "./components/Album";
+import SearchSpotify from "./views/SearchSpotify";
+import Artist from "./views/Artist";
+import Album from "./views/Album";
 import "./App.css";
 import { spotifyApi, SpotifyContext } from "./util/spotify_context";
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React, its good!
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 class Home extends Component {
   render() {
@@ -40,7 +19,7 @@ class Home extends Component {
         ) : (
           <div className="search-box">
             <a href="http://localhost:8888">
-              <span className="search-placeholder">Login to Spotify</span>{" "}
+              <span className="search-placeholder">Login to Spotify</span>
             </a>
           </div>
         )}

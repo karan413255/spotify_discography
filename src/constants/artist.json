@@ -1,0 +1,1163 @@
+{
+  "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5/albums?offset=0&limit=20&include_groups=album,single,compilation,appears_on",
+  "items": [
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["CA"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/7mVGJiqFH2liTZJxAyHsMF"
+      },
+      "href": "https://api.spotify.com/v1/albums/7mVGJiqFH2liTZJxAyHsMF",
+      "id": "7mVGJiqFH2liTZJxAyHsMF",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/aff5a41d031f2007890a5601d5eb513bf615666b",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/71179f7d612f14d2e5d709441b378fbbb2d4112e",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/00c9d56a3da3137a13883d3ae4bf7ca7e3508b4b",
+          "width": 64
+        }
+      ],
+      "name": "Balance",
+      "release_date": "2019-10-25",
+      "release_date_precision": "day",
+      "total_tracks": 28,
+      "type": "album",
+      "uri": "spotify:album:7mVGJiqFH2liTZJxAyHsMF"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["AT", "CH", "DE"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/13otdwctLE5YLWnKyRwnK4"
+      },
+      "href": "https://api.spotify.com/v1/albums/13otdwctLE5YLWnKyRwnK4",
+      "id": "13otdwctLE5YLWnKyRwnK4",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/0531323df454c92e2dc1ea9ae950d15677a9a9fc",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/bb8587c2ff731cd97949e8548dd77331124575f6",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/3682cae4742527f6a926e6078c2ca377b12aea24",
+          "width": 64
+        }
+      ],
+      "name": "Balance",
+      "release_date": "2019-10-25",
+      "release_date_precision": "day",
+      "total_tracks": 28,
+      "type": "album",
+      "uri": "spotify:album:13otdwctLE5YLWnKyRwnK4"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": [
+        "AD",
+        "AE",
+        "AR",
+        "AU",
+        "BH",
+        "BO",
+        "BR",
+        "CL",
+        "CO",
+        "CR",
+        "CY",
+        "CZ",
+        "DK",
+        "DO",
+        "DZ",
+        "EC",
+        "EE",
+        "EG",
+        "ES",
+        "FI",
+        "FR",
+        "GB",
+        "GR",
+        "GT",
+        "HK",
+        "HN",
+        "HU",
+        "ID",
+        "IE",
+        "IL",
+        "IN",
+        "IS",
+        "IT",
+        "JO",
+        "JP",
+        "KW",
+        "LB",
+        "LI",
+        "LT",
+        "LV",
+        "MA",
+        "MC",
+        "MT",
+        "MX",
+        "MY",
+        "NI",
+        "NL",
+        "NO",
+        "NZ",
+        "OM",
+        "PA",
+        "PE",
+        "PH",
+        "PL",
+        "PS",
+        "PT",
+        "PY",
+        "QA",
+        "SA",
+        "SE",
+        "SG",
+        "SK",
+        "SV",
+        "TH",
+        "TN",
+        "TR",
+        "TW",
+        "US",
+        "UY",
+        "VN",
+        "ZA"
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/5cqwXF2j9LkvFInBFlnQd3"
+      },
+      "href": "https://api.spotify.com/v1/albums/5cqwXF2j9LkvFInBFlnQd3",
+      "id": "5cqwXF2j9LkvFInBFlnQd3",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/18a1925857c74000e400cdca3dc6ea850b6bb543",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/73344684d54e28f166c0aad17cc59e17c8f042c9",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/f6cf9923cdb03117814c95139a9fb7cd638cb983",
+          "width": 64
+        }
+      ],
+      "name": "Balance",
+      "release_date": "2019-10-25",
+      "release_date_precision": "day",
+      "total_tracks": 28,
+      "type": "album",
+      "uri": "spotify:album:5cqwXF2j9LkvFInBFlnQd3"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["BG", "RO"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/0YQcbO0YVPirPn4gcWoEl6"
+      },
+      "href": "https://api.spotify.com/v1/albums/0YQcbO0YVPirPn4gcWoEl6",
+      "id": "0YQcbO0YVPirPn4gcWoEl6",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/0531323df454c92e2dc1ea9ae950d15677a9a9fc",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/bb8587c2ff731cd97949e8548dd77331124575f6",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/3682cae4742527f6a926e6078c2ca377b12aea24",
+          "width": 64
+        }
+      ],
+      "name": "Balance",
+      "release_date": "2019-10-25",
+      "release_date_precision": "day",
+      "total_tracks": 28,
+      "type": "album",
+      "uri": "spotify:album:0YQcbO0YVPirPn4gcWoEl6"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["BE", "LU"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/1uOqtPwW4zYa4bkbKRgu1K"
+      },
+      "href": "https://api.spotify.com/v1/albums/1uOqtPwW4zYa4bkbKRgu1K",
+      "id": "1uOqtPwW4zYa4bkbKRgu1K",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/18a1925857c74000e400cdca3dc6ea850b6bb543",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/73344684d54e28f166c0aad17cc59e17c8f042c9",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/f6cf9923cdb03117814c95139a9fb7cd638cb983",
+          "width": 64
+        }
+      ],
+      "name": "Balance",
+      "release_date": "2019-10-25",
+      "release_date_precision": "day",
+      "total_tracks": 28,
+      "type": "album",
+      "uri": "spotify:album:1uOqtPwW4zYa4bkbKRgu1K"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/25mFVpuABa9GkGcj9eOPce"
+          },
+          "href": "https://api.spotify.com/v1/artists/25mFVpuABa9GkGcj9eOPce",
+          "id": "25mFVpuABa9GkGcj9eOPce",
+          "name": "Armin van Buuren ASOT Radio",
+          "type": "artist",
+          "uri": "spotify:artist:25mFVpuABa9GkGcj9eOPce"
+        }
+      ],
+      "available_markets": [
+        "AD",
+        "AE",
+        "AR",
+        "AT",
+        "AU",
+        "BE",
+        "BG",
+        "BH",
+        "BO",
+        "BR",
+        "CA",
+        "CH",
+        "CL",
+        "CO",
+        "CR",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "DO",
+        "DZ",
+        "EC",
+        "EE",
+        "EG",
+        "ES",
+        "FI",
+        "FR",
+        "GB",
+        "GR",
+        "GT",
+        "HK",
+        "HN",
+        "HU",
+        "ID",
+        "IE",
+        "IL",
+        "IN",
+        "IS",
+        "IT",
+        "JO",
+        "JP",
+        "KW",
+        "LB",
+        "LI",
+        "LT",
+        "LU",
+        "LV",
+        "MA",
+        "MC",
+        "MT",
+        "MX",
+        "MY",
+        "NI",
+        "NL",
+        "NO",
+        "NZ",
+        "OM",
+        "PA",
+        "PE",
+        "PH",
+        "PL",
+        "PS",
+        "PT",
+        "PY",
+        "QA",
+        "RO",
+        "SA",
+        "SE",
+        "SG",
+        "SK",
+        "SV",
+        "TH",
+        "TN",
+        "TR",
+        "TW",
+        "US",
+        "UY",
+        "VN",
+        "ZA"
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/3yQc2BfP3p5McMarmzqjKs"
+      },
+      "href": "https://api.spotify.com/v1/albums/3yQc2BfP3p5McMarmzqjKs",
+      "id": "3yQc2BfP3p5McMarmzqjKs",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/73f2b416d309efcb713381618347dc2a4e872cb2",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/75716487d4d31be96b7e3edf48cbe829994334a1",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/313f2a2dcc67194e2c9ee0a81fafb75fe49236e5",
+          "width": 64
+        }
+      ],
+      "name": "ASOT 941 - A State Of Trance Episode 941",
+      "release_date": "2019-10-24",
+      "release_date_precision": "day",
+      "total_tracks": 64,
+      "type": "album",
+      "uri": "spotify:album:3yQc2BfP3p5McMarmzqjKs"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["AU", "NZ"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/3w2GP7CXOfndUsfwLNZ3Jq"
+      },
+      "href": "https://api.spotify.com/v1/albums/3w2GP7CXOfndUsfwLNZ3Jq",
+      "id": "3w2GP7CXOfndUsfwLNZ3Jq",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b27335217815c75777a8d56f60b5",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e0235217815c75777a8d56f60b5",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d0000485135217815c75777a8d56f60b5",
+          "width": 64
+        }
+      ],
+      "name": "A State of Trance, Ibiza 2019 (Mixed by Armin van Buuren)",
+      "release_date": "2019-08-16",
+      "release_date_precision": "day",
+      "total_tracks": 88,
+      "type": "album",
+      "uri": "spotify:album:3w2GP7CXOfndUsfwLNZ3Jq"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["AU", "NZ"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/5TbXVHvh0CNH6s2nAjVD4q"
+      },
+      "href": "https://api.spotify.com/v1/albums/5TbXVHvh0CNH6s2nAjVD4q",
+      "id": "5TbXVHvh0CNH6s2nAjVD4q",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b27328896d185ed0bd776189813c",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e0228896d185ed0bd776189813c",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d0000485128896d185ed0bd776189813c",
+          "width": 64
+        }
+      ],
+      "name": "A State of Trance 2019 (DJ Mix)",
+      "release_date": "2019-05-03",
+      "release_date_precision": "day",
+      "total_tracks": 40,
+      "type": "album",
+      "uri": "spotify:album:5TbXVHvh0CNH6s2nAjVD4q"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["AU", "NZ"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/7Ivv8EHkaKhdld5qhAD8fe"
+      },
+      "href": "https://api.spotify.com/v1/albums/7Ivv8EHkaKhdld5qhAD8fe",
+      "id": "7Ivv8EHkaKhdld5qhAD8fe",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b2738f0da60dca12a9492dec2d67",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e028f0da60dca12a9492dec2d67",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d000048518f0da60dca12a9492dec2d67",
+          "width": 64
+        }
+      ],
+      "name": "A State of Trance Year Mix 2018",
+      "release_date": "2018-12-14",
+      "release_date_precision": "day",
+      "total_tracks": 105,
+      "type": "album",
+      "uri": "spotify:album:7Ivv8EHkaKhdld5qhAD8fe"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["AU", "NZ"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/5EpiVdja0Qb8anRqj4opYo"
+      },
+      "href": "https://api.spotify.com/v1/albums/5EpiVdja0Qb8anRqj4opYo",
+      "id": "5EpiVdja0Qb8anRqj4opYo",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273d21161bd96f831fee062e8ca",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02d21161bd96f831fee062e8ca",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851d21161bd96f831fee062e8ca",
+          "width": 64
+        }
+      ],
+      "name": "A State of Trance, Ibiza 2018 (Mixed by Armin van Buuren)",
+      "release_date": "2018-08-10",
+      "release_date_precision": "day",
+      "total_tracks": 82,
+      "type": "album",
+      "uri": "spotify:album:5EpiVdja0Qb8anRqj4opYo"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["AU", "NZ"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/59O1iIVSRMI4Xn56HwbZfk"
+      },
+      "href": "https://api.spotify.com/v1/albums/59O1iIVSRMI4Xn56HwbZfk",
+      "id": "59O1iIVSRMI4Xn56HwbZfk",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273caecc13ded9873d8237cba17",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02caecc13ded9873d8237cba17",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851caecc13ded9873d8237cba17",
+          "width": 64
+        }
+      ],
+      "name": "A State of Trance 2018",
+      "release_date": "2018-04-27",
+      "release_date_precision": "day",
+      "total_tracks": 84,
+      "type": "album",
+      "uri": "spotify:album:59O1iIVSRMI4Xn56HwbZfk"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["AU", "NZ"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/4QX2ju97I4Hu5gQMETBqqT"
+      },
+      "href": "https://api.spotify.com/v1/albums/4QX2ju97I4Hu5gQMETBqqT",
+      "id": "4QX2ju97I4Hu5gQMETBqqT",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273a0ba3f2fe9e0208f1aacad6d",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02a0ba3f2fe9e0208f1aacad6d",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851a0ba3f2fe9e0208f1aacad6d",
+          "width": 64
+        }
+      ],
+      "name": "A State of Trance Year Mix 2017 (Mixed by Armin van Buuren)",
+      "release_date": "2017-12-15",
+      "release_date_precision": "day",
+      "total_tracks": 214,
+      "type": "album",
+      "uri": "spotify:album:4QX2ju97I4Hu5gQMETBqqT"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["AU", "NZ"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/4mcxQI0YjV9fMqXfwB2ZrE"
+      },
+      "href": "https://api.spotify.com/v1/albums/4mcxQI0YjV9fMqXfwB2ZrE",
+      "id": "4mcxQI0YjV9fMqXfwB2ZrE",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273fce991f2101e97971035332a",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02fce991f2101e97971035332a",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851fce991f2101e97971035332a",
+          "width": 64
+        }
+      ],
+      "name": "The Best of Armin Only",
+      "release_date": "2017-05-14",
+      "release_date_precision": "day",
+      "total_tracks": 34,
+      "type": "album",
+      "uri": "spotify:album:4mcxQI0YjV9fMqXfwB2ZrE"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": [
+        "AD",
+        "BR",
+        "CR",
+        "ES",
+        "GT",
+        "HN",
+        "MX",
+        "NI",
+        "PA",
+        "PT",
+        "SV"
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/3ECuYU2LpgfWOP977JR6xg"
+      },
+      "href": "https://api.spotify.com/v1/albums/3ECuYU2LpgfWOP977JR6xg",
+      "id": "3ECuYU2LpgfWOP977JR6xg",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273abe783e33b481ace34e53092",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02abe783e33b481ace34e53092",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851abe783e33b481ace34e53092",
+          "width": 64
+        }
+      ],
+      "name": "Old Skool",
+      "release_date": "2016-11-11",
+      "release_date_precision": "day",
+      "total_tracks": 7,
+      "type": "album",
+      "uri": "spotify:album:3ECuYU2LpgfWOP977JR6xg"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["AT", "CH", "DE"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/22IMCn4hmoBABZkcfygPif"
+      },
+      "href": "https://api.spotify.com/v1/albums/22IMCn4hmoBABZkcfygPif",
+      "id": "22IMCn4hmoBABZkcfygPif",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273dc4c639dba8636ddfa568fb8",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02dc4c639dba8636ddfa568fb8",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851dc4c639dba8636ddfa568fb8",
+          "width": 64
+        }
+      ],
+      "name": "Old Skool (Mini Album)",
+      "release_date": "2016-08-04",
+      "release_date_precision": "day",
+      "total_tracks": 7,
+      "type": "album",
+      "uri": "spotify:album:22IMCn4hmoBABZkcfygPif"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["CA"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/0WbQxK1HJ9Y0HFNm2m8PUe"
+      },
+      "href": "https://api.spotify.com/v1/albums/0WbQxK1HJ9Y0HFNm2m8PUe",
+      "id": "0WbQxK1HJ9Y0HFNm2m8PUe",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b27300c6e88f1ccd740ce2befd76",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e0200c6e88f1ccd740ce2befd76",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d0000485100c6e88f1ccd740ce2befd76",
+          "width": 64
+        }
+      ],
+      "name": "Embrace",
+      "release_date": "2015-10-30",
+      "release_date_precision": "day",
+      "total_tracks": 15,
+      "type": "album",
+      "uri": "spotify:album:0WbQxK1HJ9Y0HFNm2m8PUe"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": [
+        "AD",
+        "AE",
+        "AR",
+        "AT",
+        "AU",
+        "BE",
+        "BG",
+        "BH",
+        "BO",
+        "BR",
+        "CH",
+        "CL",
+        "CO",
+        "CR",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "DO",
+        "DZ",
+        "EC",
+        "EE",
+        "EG",
+        "ES",
+        "FI",
+        "FR",
+        "GB",
+        "GR",
+        "GT",
+        "HK",
+        "HN",
+        "HU",
+        "ID",
+        "IE",
+        "IL",
+        "IN",
+        "IS",
+        "IT",
+        "JO",
+        "JP",
+        "KW",
+        "LB",
+        "LI",
+        "LT",
+        "LU",
+        "LV",
+        "MA",
+        "MC",
+        "MT",
+        "MX",
+        "MY",
+        "NI",
+        "NL",
+        "NO",
+        "NZ",
+        "OM",
+        "PA",
+        "PE",
+        "PH",
+        "PL",
+        "PS",
+        "PT",
+        "PY",
+        "QA",
+        "RO",
+        "SA",
+        "SE",
+        "SG",
+        "SK",
+        "SV",
+        "TH",
+        "TN",
+        "TR",
+        "TW",
+        "US",
+        "UY",
+        "VN",
+        "ZA"
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/7G53des9iRPuUydeFXXNGy"
+      },
+      "href": "https://api.spotify.com/v1/albums/7G53des9iRPuUydeFXXNGy",
+      "id": "7G53des9iRPuUydeFXXNGy",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273229f3711f93ee8680624b747",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02229f3711f93ee8680624b747",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851229f3711f93ee8680624b747",
+          "width": 64
+        }
+      ],
+      "name": "Embrace",
+      "release_date": "2015-10-29",
+      "release_date_precision": "day",
+      "total_tracks": 15,
+      "type": "album",
+      "uri": "spotify:album:7G53des9iRPuUydeFXXNGy"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["PT"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/7HWdQPPtzOJ4M1F2fMBs07"
+      },
+      "href": "https://api.spotify.com/v1/albums/7HWdQPPtzOJ4M1F2fMBs07",
+      "id": "7HWdQPPtzOJ4M1F2fMBs07",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b2737224ef892fdd842bc6df7863",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e027224ef892fdd842bc6df7863",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d000048517224ef892fdd842bc6df7863",
+          "width": 64
+        }
+      ],
+      "name": "Embrace",
+      "release_date": "2015-10-28",
+      "release_date_precision": "day",
+      "total_tracks": 15,
+      "type": "album",
+      "uri": "spotify:album:7HWdQPPtzOJ4M1F2fMBs07"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["CA"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/7kv3KbCBmyN8Y9UACBmDgq"
+      },
+      "href": "https://api.spotify.com/v1/albums/7kv3KbCBmyN8Y9UACBmDgq",
+      "id": "7kv3KbCBmyN8Y9UACBmDgq",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273cae0c27110d8bebc9b2ebd72",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02cae0c27110d8bebc9b2ebd72",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851cae0c27110d8bebc9b2ebd72",
+          "width": 64
+        }
+      ],
+      "name": "Intense (The Most Intense Edition)",
+      "release_date": "2015-01-20",
+      "release_date_precision": "day",
+      "total_tracks": 77,
+      "type": "album",
+      "uri": "spotify:album:7kv3KbCBmyN8Y9UACBmDgq"
+    },
+    {
+      "album_group": "album",
+      "album_type": "album",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+          "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+          "name": "Armin van Buuren",
+          "type": "artist",
+          "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+        }
+      ],
+      "available_markets": ["AR", "BO", "CL", "CO", "EC", "PE", "PY", "UY"],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/1KMid79PKJk0WLdPvub5zV"
+      },
+      "href": "https://api.spotify.com/v1/albums/1KMid79PKJk0WLdPvub5zV",
+      "id": "1KMid79PKJk0WLdPvub5zV",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273ae3084eab338fee850c010a6",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02ae3084eab338fee850c010a6",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851ae3084eab338fee850c010a6",
+          "width": 64
+        }
+      ],
+      "name": "Embrace",
+      "release_date": "2015-01-01",
+      "release_date_precision": "day",
+      "total_tracks": 15,
+      "type": "album",
+      "uri": "spotify:album:1KMid79PKJk0WLdPvub5zV"
+    }
+  ],
+  "limit": 20,
+  "next": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5/albums?offset=20&limit=20&include_groups=album,single,compilation,appears_on",
+  "offset": 0,
+  "previous": null,
+  "total": 1606
+}

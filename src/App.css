@@ -22,17 +22,31 @@
 } */
 
 .spotify-discography-home {
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh;
+  width: 100vw; */
   background-color: black;
 }
 
 .search-box {
   text-align: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .search-placeholder {
   color: white;
   text-decoration: underline;
+}
+
+.album {
+}
+
+.albumImage {
+  height: 200px;
+}
+.albumName {
+  color: white;
+}
+
+.albumPage {
+  color: white;
 }

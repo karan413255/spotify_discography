@@ -1,0 +1,376 @@
+{
+  "album_type": "single",
+  "artists": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+      },
+      "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+      "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+      "name": "Armin van Buuren",
+      "type": "artist",
+      "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/29zsVzEH33dD5QqxeL8dvy"
+      },
+      "href": "https://api.spotify.com/v1/artists/29zsVzEH33dD5QqxeL8dvy",
+      "id": "29zsVzEH33dD5QqxeL8dvy",
+      "name": "Vini Vici",
+      "type": "artist",
+      "uri": "spotify:artist:29zsVzEH33dD5QqxeL8dvy"
+    }
+  ],
+  "available_markets": [
+    "AE",
+    "AR",
+    "AT",
+    "BE",
+    "BG",
+    "BH",
+    "BO",
+    "CA",
+    "CH",
+    "CL",
+    "CO",
+    "CY",
+    "CZ",
+    "DE",
+    "DK",
+    "DO",
+    "DZ",
+    "EC",
+    "EE",
+    "EG",
+    "FI",
+    "FR",
+    "GB",
+    "GR",
+    "HK",
+    "HU",
+    "ID",
+    "IE",
+    "IL",
+    "IN",
+    "IS",
+    "JO",
+    "KW",
+    "LB",
+    "LI",
+    "LT",
+    "LU",
+    "LV",
+    "MA",
+    "MC",
+    "MT",
+    "MY",
+    "NL",
+    "NO",
+    "OM",
+    "PE",
+    "PH",
+    "PL",
+    "PS",
+    "PY",
+    "QA",
+    "RO",
+    "SA",
+    "SE",
+    "SG",
+    "SK",
+    "SV",
+    "TH",
+    "TN",
+    "TR",
+    "TW",
+    "US",
+    "UY",
+    "VN",
+    "ZA"
+  ],
+  "copyrights": [
+    {
+      "text": "2016 Armada Music B.V.",
+      "type": "C"
+    },
+    {
+      "text": "2016 Armin Audio B.V. under exclusive license to Armada Music B.V.",
+      "type": "P"
+    }
+  ],
+  "external_ids": {
+    "upc": "8718522120756"
+  },
+  "external_urls": {
+    "spotify": "https://open.spotify.com/album/6VEtDjgVAhRUJPxi4XFCfv"
+  },
+  "genres": [],
+  "href": "https://api.spotify.com/v1/albums/6VEtDjgVAhRUJPxi4XFCfv",
+  "id": "6VEtDjgVAhRUJPxi4XFCfv",
+  "images": [
+    {
+      "height": 640,
+      "url": "https://i.scdn.co/image/ab67616d0000b273488a5ccfa537450e19c05aae",
+      "width": 640
+    },
+    {
+      "height": 300,
+      "url": "https://i.scdn.co/image/ab67616d00001e02488a5ccfa537450e19c05aae",
+      "width": 300
+    },
+    {
+      "height": 64,
+      "url": "https://i.scdn.co/image/ab67616d00004851488a5ccfa537450e19c05aae",
+      "width": 64
+    }
+  ],
+  "label": "Armind",
+  "name": "Great Spirit",
+  "popularity": 41,
+  "release_date": "2016-12-12",
+  "release_date_precision": "day",
+  "total_tracks": 2,
+  "tracks": {
+    "href": "https://api.spotify.com/v1/albums/6VEtDjgVAhRUJPxi4XFCfv/tracks?offset=0&limit=50",
+    "items": [
+      {
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+            },
+            "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+            "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+            "name": "Armin van Buuren",
+            "type": "artist",
+            "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/29zsVzEH33dD5QqxeL8dvy"
+            },
+            "href": "https://api.spotify.com/v1/artists/29zsVzEH33dD5QqxeL8dvy",
+            "id": "29zsVzEH33dD5QqxeL8dvy",
+            "name": "Vini Vici",
+            "type": "artist",
+            "uri": "spotify:artist:29zsVzEH33dD5QqxeL8dvy"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/62RdOEwjfXjFOQpKdufMR7"
+            },
+            "href": "https://api.spotify.com/v1/artists/62RdOEwjfXjFOQpKdufMR7",
+            "id": "62RdOEwjfXjFOQpKdufMR7",
+            "name": "Hilight Tribe",
+            "type": "artist",
+            "uri": "spotify:artist:62RdOEwjfXjFOQpKdufMR7"
+          }
+        ],
+        "available_markets": [
+          "AE",
+          "AR",
+          "AT",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "HK",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "JO",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MY",
+          "NL",
+          "NO",
+          "OM",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 215773,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/6UOUR1yagi29vs9MSbGnGp"
+        },
+        "href": "https://api.spotify.com/v1/tracks/6UOUR1yagi29vs9MSbGnGp",
+        "id": "6UOUR1yagi29vs9MSbGnGp",
+        "is_local": false,
+        "name": "Great Spirit",
+        "preview_url": "https://p.scdn.co/mp3-preview/3266a109432f0ce33ee60be2e99a58d47c1193cc?cid=3fc3b4d87709460c957f2ab8bbf83fbd",
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:6UOUR1yagi29vs9MSbGnGp"
+      },
+      {
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
+            },
+            "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
+            "id": "0SfsnGyD8FpIN4U4WCkBZ5",
+            "name": "Armin van Buuren",
+            "type": "artist",
+            "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/29zsVzEH33dD5QqxeL8dvy"
+            },
+            "href": "https://api.spotify.com/v1/artists/29zsVzEH33dD5QqxeL8dvy",
+            "id": "29zsVzEH33dD5QqxeL8dvy",
+            "name": "Vini Vici",
+            "type": "artist",
+            "uri": "spotify:artist:29zsVzEH33dD5QqxeL8dvy"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/62RdOEwjfXjFOQpKdufMR7"
+            },
+            "href": "https://api.spotify.com/v1/artists/62RdOEwjfXjFOQpKdufMR7",
+            "id": "62RdOEwjfXjFOQpKdufMR7",
+            "name": "Hilight Tribe",
+            "type": "artist",
+            "uri": "spotify:artist:62RdOEwjfXjFOQpKdufMR7"
+          }
+        ],
+        "available_markets": [
+          "AE",
+          "AR",
+          "AT",
+          "BE",
+          "BG",
+          "BH",
+          "BO",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "HK",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IN",
+          "IS",
+          "JO",
+          "KW",
+          "LB",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MA",
+          "MC",
+          "MT",
+          "MY",
+          "NL",
+          "NO",
+          "OM",
+          "PE",
+          "PH",
+          "PL",
+          "PS",
+          "PY",
+          "QA",
+          "RO",
+          "SA",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TN",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "disc_number": 1,
+        "duration_ms": 457826,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/1bxtePWzYybaPiUZqvgQVf"
+        },
+        "href": "https://api.spotify.com/v1/tracks/1bxtePWzYybaPiUZqvgQVf",
+        "id": "1bxtePWzYybaPiUZqvgQVf",
+        "is_local": false,
+        "name": "Great Spirit - Extended Mix",
+        "preview_url": "https://p.scdn.co/mp3-preview/212c24c53d0358c62bb2e09099b1498466ea548d?cid=3fc3b4d87709460c957f2ab8bbf83fbd",
+        "track_number": 2,
+        "type": "track",
+        "uri": "spotify:track:1bxtePWzYybaPiUZqvgQVf"
+      }
+    ],
+    "limit": 50,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total": 2
+  },
+  "type": "album",
+  "uri": "spotify:album:6VEtDjgVAhRUJPxi4XFCfv"
+}
