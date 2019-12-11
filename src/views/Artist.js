@@ -12,8 +12,13 @@ class Artist extends Component {
 
   componentDidMount() {
     const albums = artist.items;
-    console.log(albums);
-    this.setState({ albums });
+    let filterAlbums = [];
+    albums.forEach(album => {
+      if (album.available_markets.includes("IN")) {
+        filterAlbums.push(album);
+      }
+    });
+    this.setState({ albums: filterAlbums });
   }
 
   render() {
@@ -32,7 +37,9 @@ class Artist extends Component {
               {/* <img src={artist.images[1].url} alt={artist.name}></img> */}
             </div>
             <div className="artist-albums">
-              {albums ? albums.map(album => <Album album={album} />) : null}
+              {albums
+                ? albums.map(album => <Album key={album.id} album={album} />)
+                : null}
             </div>
           </div>
         </div>

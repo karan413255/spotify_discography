@@ -56,14 +56,14 @@ class SearchSpotify extends Component {
   render() {
     var { albumList, artistList } = this.state;
     return (
-      <div>
+      <div className="search">
         <div className="search-box">
           <input type="text"></input>
           <button>Search</button>
         </div>
 
         {/* album list */}
-        {/* <div className="search-album">
+        <div className="search-album">
           <h3 className="search-album--header">Albums</h3>
           <div className="search-album--widget">
             {albumList
@@ -72,7 +72,7 @@ class SearchSpotify extends Component {
                 ))
               : null}
           </div>
-        </div> */}
+        </div>
 
         {/* artist list */}
         <div className="search-artist">

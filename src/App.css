@@ -37,9 +37,6 @@
   text-decoration: underline;
 }
 
-.album {
-}
-
 .albumImage {
   height: 200px;
 }
@@ -48,5 +45,9 @@
 }
 
 .albumPage {
+  color: white;
+}
+
+.search {
   color: white;
 }

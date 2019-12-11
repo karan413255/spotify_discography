@@ -65,7 +65,7 @@ class App extends Component {
               exact
               path="/"
               render={routeProps => (
-                <Home {...routeProps} loggedIn={this.state.loggedIn} />
+                <SearchSpotify {...routeProps} loggedIn={this.state.loggedIn} />
               )}
             />
             <Route
