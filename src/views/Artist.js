@@ -18,8 +18,15 @@ class Artist extends Component {
         filterAlbums.push(album);
       }
     });
+    filterAlbums.sort(this.compareDate);
     this.setState({ albums: filterAlbums });
   }
+
+  compareDate = (a1, a2) => {
+    if (a1.release_date > a2.release_date) return -1;
+    else if (a1.release_date < a2.release_date) return 1;
+    return 0;
+  };
 
   render() {
     const { albums } = this.state;
