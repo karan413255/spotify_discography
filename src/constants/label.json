@@ -1,0 +1,83 @@
+{
+    "profile": "Dutch Trance label, the very first imprint of Armada Music.\r\nWith the little Armind angel as its trademark, Armind was founded by [a=Armin van Buuren] himself, who selects the best and most original tunes, often instant classics or glorious future favourites. To top that off, Armin chose Armind as the home of all his own productions.\r\nFormer subdivision of [l=United Recordings].",
+    "releases_url": "https://api.discogs.com/labels/3617/releases",
+    "name": "Armind",
+    "contact_info": "[i]See parent label.[/i]",
+    "parent_label": {
+        "resource_url": "https://api.discogs.com/labels/213897",
+        "id": 213897,
+        "name": "Armada Music B.V."
+    },
+    "uri": "https://www.discogs.com/label/3617-Armind",
+    "sublabels": [
+        {
+            "resource_url": "https://api.discogs.com/labels/52887",
+            "id": 52887,
+            "name": "Armind Limited"
+        }
+    ],
+    "urls": [
+        "http://www.armadamusic.com/labels/armind"
+    ],
+    "images": [
+        {
+            "uri": "https://img.discogs.com/f02EMhIOBDHVQgwrSb7zNKbHWrc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1476052587-1510.jpeg.jpg",
+            "height": 600,
+            "width": 600,
+            "resource_url": "https://img.discogs.com/f02EMhIOBDHVQgwrSb7zNKbHWrc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1476052587-1510.jpeg.jpg",
+            "type": "primary",
+            "uri150": "https://img.discogs.com/xrRvvOp1vKGm-sJ0OOekvQ445G0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-3617-1476052587-1510.jpeg.jpg"
+        },
+        {
+            "uri": "https://img.discogs.com/6rUh-cmN6eqgnL2GbLZc4GASoBI=/fit-in/366x579/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1221241672.jpeg.jpg",
+            "height": 579,
+            "width": 366,
+            "resource_url": "https://img.discogs.com/6rUh-cmN6eqgnL2GbLZc4GASoBI=/fit-in/366x579/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1221241672.jpeg.jpg",
+            "type": "secondary",
+            "uri150": "https://img.discogs.com/gHMiZz4PaQp05TpYAhJ99RoLqPE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-3617-1221241672.jpeg.jpg"
+        },
+        {
+            "uri": "https://img.discogs.com/6kTaEOSOmLC9foDQDKMrjsTGfq8=/fit-in/571x123/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1104871305.gif.jpg",
+            "height": 123,
+            "width": 571,
+            "resource_url": "https://img.discogs.com/6kTaEOSOmLC9foDQDKMrjsTGfq8=/fit-in/571x123/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1104871305.gif.jpg",
+            "type": "secondary",
+            "uri150": "https://img.discogs.com/uKUS1g1byIwTqWrrWhM_oUdop0Y=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-3617-1104871305.gif.jpg"
+        },
+        {
+            "uri": "https://img.discogs.com/s0zK1eGzyaswutA9UZzQZQwIg9U=/fit-in/196x34/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1077883207.jpg.jpg",
+            "height": 34,
+            "width": 196,
+            "resource_url": "https://img.discogs.com/s0zK1eGzyaswutA9UZzQZQwIg9U=/fit-in/196x34/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1077883207.jpg.jpg",
+            "type": "secondary",
+            "uri150": "https://img.discogs.com/9qEl_S-t_ajwhaid9UgMsCDJQrQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-3617-1077883207.jpg.jpg"
+        },
+        {
+            "uri": "https://img.discogs.com/JMVb1TEM48u4Fj82fnuw3ssIc9M=/fit-in/335x150/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1232917714.jpeg.jpg",
+            "height": 150,
+            "width": 335,
+            "resource_url": "https://img.discogs.com/JMVb1TEM48u4Fj82fnuw3ssIc9M=/fit-in/335x150/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1232917714.jpeg.jpg",
+            "type": "secondary",
+            "uri150": "https://img.discogs.com/LBQlICLIaxeLfu9LKtPcKeSoHoY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-3617-1232917714.jpeg.jpg"
+        },
+        {
+            "uri": "https://img.discogs.com/_Ts9Xo2o1S1n9UsemrqAjquCc9s=/fit-in/83x169/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1078310392.jpg.jpg",
+            "height": 169,
+            "width": 83,
+            "resource_url": "https://img.discogs.com/_Ts9Xo2o1S1n9UsemrqAjquCc9s=/fit-in/83x169/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1078310392.jpg.jpg",
+            "type": "secondary",
+            "uri150": "https://img.discogs.com/6oOUmivJ_KboLfwsAS7bjjFstXg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-3617-1078310392.jpg.jpg"
+        },
+        {
+            "uri": "https://img.discogs.com/4XbE-Js7M1opO22Qk_Mt48cCgE4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1344836061-2117.jpeg.jpg",
+            "height": 600,
+            "width": 600,
+            "resource_url": "https://img.discogs.com/4XbE-Js7M1opO22Qk_Mt48cCgE4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1344836061-2117.jpeg.jpg",
+            "type": "secondary",
+            "uri150": "https://img.discogs.com/EQ6tY_iiXBHnf6RbOrXbXwznNaI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-3617-1344836061-2117.jpeg.jpg"
+        }
+    ],
+    "resource_url": "https://api.discogs.com/labels/3617",
+    "id": 3617,
+    "data_quality": "Correct"
+}

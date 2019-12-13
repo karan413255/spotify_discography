@@ -44,9 +44,15 @@ class SearchSpotify extends Component {
     //     }
     //   });
     // });
+    var search = "";
 
     var albumsList = spotify_search.albums.items;
     var artistsList = spotify_search.artists.items;
+    var filteredAlbumList = [];
+    // albumsList.forEach(album => {
+    //   if (album.label.contains()) {
+    //   }
+    // });
     this.setState({
       albumList: albumsList,
       artistList: artistsList

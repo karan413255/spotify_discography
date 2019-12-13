@@ -1,0 +1,66 @@
+{
+    "pagination": {
+        "per_page": 50,
+        "items": 5,
+        "page": 1,
+        "urls": {},
+        "pages": 1
+    },
+    "results": [
+        {
+            "thumb": "https://img.discogs.com/xrRvvOp1vKGm-sJ0OOekvQ445G0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-3617-1476052587-1510.jpeg.jpg",
+            "title": "Armind",
+            "uri": "/label/3617-Armind",
+            "master_url": null,
+            "cover_image": "https://img.discogs.com/f02EMhIOBDHVQgwrSb7zNKbHWrc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-3617-1476052587-1510.jpeg.jpg",
+            "resource_url": "https://api.discogs.com/labels/3617",
+            "master_id": null,
+            "type": "label",
+            "id": 3617
+        },
+        {
+            "thumb": "",
+            "title": "Armind Limited",
+            "uri": "/label/52887-Armind-Limited",
+            "master_url": null,
+            "cover_image": "https://img.discogs.com/d0f2a274b092a92ee3246b21902a118c7a001b31/images/spacer.gif",
+            "resource_url": "https://api.discogs.com/labels/52887",
+            "master_id": null,
+            "type": "label",
+            "id": 52887
+        },
+        {
+            "thumb": "",
+            "title": "Armind - The Collected 12\" Mixes",
+            "uri": "/label/472979-Armind-The-Collected-12-Mixes",
+            "master_url": null,
+            "cover_image": "https://img.discogs.com/d0f2a274b092a92ee3246b21902a118c7a001b31/images/spacer.gif",
+            "resource_url": "https://api.discogs.com/labels/472979",
+            "master_id": null,
+            "type": "label",
+            "id": 472979
+        },
+        {
+            "thumb": "",
+            "title": "Armin Van Buuren Presents: Armind",
+            "uri": "/label/724085-Armin-Van-Buuren-Presents-Armind",
+            "master_url": null,
+            "cover_image": "https://img.discogs.com/d0f2a274b092a92ee3246b21902a118c7a001b31/images/spacer.gif",
+            "resource_url": "https://api.discogs.com/labels/724085",
+            "master_id": null,
+            "type": "label",
+            "id": 724085
+        },
+        {
+            "thumb": "https://img.discogs.com/tcq-wVvj_ylmqabv35YqFafRGW4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-2966-1554129702-3537.jpeg.jpg",
+            "title": "United Recordings",
+            "uri": "/label/2966-United-Recordings",
+            "master_url": null,
+            "cover_image": "https://img.discogs.com/WGWjvxKLjIWPfVXJBGR0VHW0P5E=/fit-in/500x290/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-2966-1554129702-3537.jpeg.jpg",
+            "resource_url": "https://api.discogs.com/labels/2966",
+            "master_id": null,
+            "type": "label",
+            "id": 2966
+        }
+    ]
+}
