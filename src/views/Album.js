@@ -8,6 +8,7 @@ class Album extends Component {
   }
 
   componentDidMount() {
+    // call spotify album details api to get album details
     this.getAlbumDetails();
   }
 

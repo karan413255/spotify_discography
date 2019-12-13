@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { SpotifyContext } from "../util/spotify_context";
 import axios from "axios";
 import spotify_search from "../constants/search";
+import labels from "../constants/labels";
 import Album from "../components/album";
 import Artist from "../components/artist";
+import Label from "../components/label";
 
 class SearchSpotify extends Component {
   constructor(props) {
@@ -11,9 +13,11 @@ class SearchSpotify extends Component {
     let spotifyApi = this.context;
     this.state = {
       searchValue: "",
-      artistList: [],
-      albumList: [],
-      songsList: []
+      searchType: "",
+      // artistList: [],
+      albumsList: [],
+      songsList: [],
+      labelsList: []
     };
   }
 
@@ -46,21 +50,24 @@ class SearchSpotify extends Component {
     // });
     var search = "";
 
-    var albumsList = spotify_search.albums.items;
-    var artistsList = spotify_search.artists.items;
-    var filteredAlbumList = [];
+    // var albumsList = spotify_search.albums.items;
+    var artistList = spotify_search.artists.items;
+    var labelsList = labels.results;
+    // var filteredAlbumList = [];
     // albumsList.forEach(album => {
     //   if (album.label.contains()) {
     //   }
     // });
     this.setState({
-      albumList: albumsList,
-      artistList: artistsList
+      // albumsList,
+      artistList,
+      labelsList,
+      searchType: "label"
     });
   };
 
   render() {
-    var { albumList, artistList } = this.state;
+    var { artistList, labelsList, searchType } = this.state;
     return (
       <div className="search">
         <div className="search-box">
@@ -68,29 +75,44 @@ class SearchSpotify extends Component {
           <button>Search</button>
         </div>
 
-        {/* album list */}
+        {/* labels list */}
+        {searchType === "label" ? (
+          <div classNam="search-label">
+            <h3 className="search-label--header">Labels</h3>
+            <div className="search-label--widget">
+              {labelsList
+                ? labelsList.map(label => (
+                    <Label key={label.id} label={label} />
+                  ))
+                : null}
+            </div>
+          </div>
+        ) : null}
+        {/* album list
         <div className="search-album">
           <h3 className="search-album--header">Albums</h3>
           <div className="search-album--widget">
-            {albumList
-              ? albumList.map(album => (
+            {albumsList
+              ? albumsList.map(album => (
                   <Album key={album["id"]} album={album} />
                 ))
               : null}
           </div>
-        </div>
+        </div> */}
 
         {/* artist list */}
-        <div className="search-artist">
-          <h3 className="search-artist--header">Artists</h3>
-          <div className="search-artist--widget">
-            {artistList
-              ? artistList.map(artist => (
-                  <Artist key={artist.id} artist={artist} />
-                ))
-              : null}
+        {searchType === "artist" ? (
+          <div className="search-artist">
+            <h3 className="search-artist--header">Artists</h3>
+            <div className="search-artist--widget">
+              {artistList
+                ? artistList.map(artist => (
+                    <Artist key={artist.id} artist={artist} />
+                  ))
+                : null}
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     );
   }

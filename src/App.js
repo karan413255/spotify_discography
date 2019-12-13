@@ -5,6 +5,7 @@ import Artist from "./views/Artist";
 import Album from "./views/Album";
 import "./App.css";
 import { spotifyApi, SpotifyContext } from "./util/spotify_context";
+import Label from "./views/Label";
 
 class Home extends Component {
   render() {
@@ -80,6 +81,10 @@ class App extends Component {
               path="/album/:id"
               render={routeProps => <Album {...routeProps} />}
             />
+            <Route
+              path="/label/:id"
+              render={routeProps => <Label {...routeProps} />}
+            ></Route>
           </SpotifyContext.Provider>
         </Router>
       </div>

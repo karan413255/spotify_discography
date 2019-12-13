@@ -15,7 +15,7 @@ class Artist extends Component {
           render={({ history }) => (
             <a href="" onClick={() => history.push("/artist/" + artist.id)}>
               <img className="artistImage" alt="" src={artist.images[1].url} />
-              <div className="albumName">{artist.name}</div>
+              <div className="artistName">{artist.name}</div>
             </a>
           )}
         ></Route>
