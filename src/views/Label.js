@@ -4,7 +4,6 @@ import label from "../constants/label";
 import searchLabel from "../constants/search";
 import Album from "../components/album";
 import Artist from "../components/artist";
-import compareDate from "../util/common_functions";
 
 export default class Label extends Component {
   constructor(props) {

@@ -12,14 +12,8 @@ class Artist extends Component {
 
   componentDidMount() {
     const albums = artist.items;
-    let filterAlbums = [];
-    albums.forEach(album => {
-      if (album.available_markets.includes("IN")) {
-        filterAlbums.push(album);
-      }
-    });
-    filterAlbums.sort(this.compareDate);
-    this.setState({ albums: filterAlbums });
+    albums.sort(this.compareDate);
+    this.setState({ albums });
   }
 
   compareDate = (a1, a2) => {

@@ -62,7 +62,7 @@ class SearchSpotify extends Component {
       // albumsList,
       artistList,
       labelsList,
-      searchType: "label"
+      searchType: "artist"
     });
   };
 
