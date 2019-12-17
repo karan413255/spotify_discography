@@ -52,12 +52,11 @@ export default class Label extends Component {
     return 0;
   };
 
-  getLabelDetails = () => {
+  getLabelDetails = async () => {
     this.setState(state => ({
       isLoading: !state.isLoading
     }));
     const token = localStorage.getItem("token");
-    console.log(token);
     fetch("https://api.discogs.com/labels/" + this.props.match.params.id, {
       method: "GET",
       headers: {
@@ -74,7 +73,6 @@ export default class Label extends Component {
         }
       })
       .then(res => {
-        console.log(res);
         this.setState({ label: res });
         const query = {
           query: `label:"${res.name}"`,
@@ -100,57 +98,48 @@ export default class Label extends Component {
               throw new Error("invalid token");
             }
           })
-          .then(res => {
+          .then(async res => {
             let artists = res.artists.items;
             let releases = res.albums.items;
             // this.setState({ artists, album });
             let nextAlbums = res.albums.next;
             let nextArtists = res.artists.next;
+            let data, response;
+            console.log(nextAlbums);
             console.log(nextArtists);
-            while (nextAlbums) {
-              fetch(nextAlbums, {
+            while (nextAlbums !== null) {
+              response = await fetch(nextAlbums, {
                 method: "GET",
                 headers: {
                   Authorization: `Bearer ${token}`
                 }
-              })
-                .then(res => {
-                  if (res.status === 200) {
-                    return res.json();
-                  }
-                })
-                .then(res => {
-                  nextAlbums = res.albums.next;
-                  console.log(res);
-                  releases.push.apply(releases, res.albums.items);
-                })
-                .catch(res => console.log(res));
+              });
+              if (response.status === 200) {
+                data = await response.json();
+              } else if (response.status === 401) {
+                console.log(response);
+              }
+              console.log(data);
+              nextAlbums = data.albums.next;
+              console.log(nextAlbums);
+              Array.prototype.push.apply(releases, data.albums.items);
             }
             while (nextArtists !== null) {
-              console.log(nextArtists);
-              fetch(nextArtists, {
+              let response = await fetch(nextArtists, {
                 method: "GET",
                 headers: {
                   Authorization: `Bearer ${token}`
                 }
-              })
-                .then(res => {
-                  // console.log(res.json());
-                  if (res.status === 200) {
-                    return res.json();
-                  } else if (res.status == 401) {
-                    console.log(res);
-                    throw new Error(res.text());
-                  }
-                })
-                .then(res => {
-                  console.log(res);
-                  nextArtists = res.artists.next;
-                  Array.prototype.push.apply(artists, res.artists.items);
-                  console.log(artists.length);
-                  this.setState({ artists });
-                })
-                .catch(res => console.log(res));
+              });
+              if (response.status === 200) {
+                data = await response.json();
+              } else if (response.status === 401) {
+                console.log(response);
+              }
+              console.log(data);
+              nextArtists = data.artists.next;
+              Array.prototype.push.apply(artists, data.artists.items);
+              console.log(nextArtists);
             }
             let albums = [];
             let singles = [];
@@ -175,7 +164,7 @@ export default class Label extends Component {
             console.log(compilations.length);
             console.log("artists");
             console.log(artists.length);
-            this.setState({ albums, singles, compilations });
+            this.setState({ albums, singles, compilations, artists });
             this.setState(state => ({
               isLoading: !state.isLoading
             }));
@@ -205,7 +194,7 @@ export default class Label extends Component {
       return <div>Loading....</div>;
     }
     if (isError) {
-      return <Route render={({ history }) => history.goBack()}></Route>;
+      window.location = "/#invalid_token=true";
     }
     return (
       <div className="labelPage">

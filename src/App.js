@@ -33,7 +33,12 @@ class App extends Component {
     const params = this.getHashParams();
     const refreshToken = params.refresh_token;
     const error = params.error;
+    let shouldLogin = params.invalid_token;
     // spotifyApi.setAccessToken(token);
+    console.log(shouldLogin);
+    if (shouldLogin) {
+      localStorage.removeItem("token");
+    }
     console.log(localStorage.getItem("token"));
     let token = localStorage.getItem("token");
     // console.log(token);
@@ -85,28 +90,31 @@ class App extends Component {
         <Router>
           <SpotifyContext.Provider value={this.state.spotify}>
             <Route
-              exact
               path="/"
               render={routeProps => (
                 <Home {...routeProps} loggedIn={this.state.loggedIn} />
               )}
             />
             <Route
+              exact
               path="/search/"
               render={routeProps => <SearchSpotify {...routeProps} />}
             />
             <Route
+              exact
               path="/artist/:id"
               render={routeProps => <Artist {...routeProps} />}
             />
             <Route
+              exact
               path="/album/:id"
               render={routeProps => <Album {...routeProps} />}
             />
             <Route
+              exact
               path="/label/:id"
               render={routeProps => <Label {...routeProps} />}
-            ></Route>
+            />
           </SpotifyContext.Provider>
         </Router>
       </div>
