@@ -31,15 +31,17 @@ class App extends Component {
   constructor() {
     super();
     const params = this.getHashParams();
-    const token = params.access_token;
     const refreshToken = params.refresh_token;
     const error = params.error;
     // spotifyApi.setAccessToken(token);
     console.log(localStorage.getItem("token"));
+    let token = localStorage.getItem("token");
     // console.log(token);
-    // if (token) {
-    //   localStorage.setItem("token", token);
-    // }
+    if (params.access_token) {
+      token = params.access_token;
+      localStorage.setItem("token", params.access_token);
+      console.log(params.access_token);
+    }
     this.state = {
       loggedIn: token ? true : false,
       spotify: spotifyApi
@@ -72,7 +74,7 @@ class App extends Component {
 
   componentDidMount() {
     let token = localStorage.getItem("token");
-    
+
     if (!token) {
       this.setState({ loggedIn: false });
     }

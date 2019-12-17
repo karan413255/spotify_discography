@@ -10,11 +10,6 @@ import { Route } from "react-router-dom";
 export default class Label extends Component {
   constructor(props) {
     super(props);
-    // const labelDetail = this.props.location.state
-    //   ? this.props.location.state.label
-    //     ? this.props.location.state.label
-    //     : null
-    //   : null;
     this.state = {
       albums: [],
       singles: [],
@@ -58,16 +53,12 @@ export default class Label extends Component {
   };
 
   getLabelDetails = () => {
-    const id = window.location.pathname.split("/")[2];
-    console.log(this.props.location.state.label);
-    const labelDetail = this.props.location.state.lable;
-    console.log(labelDetail);
     this.setState(state => ({
       isLoading: !state.isLoading
     }));
     const token = localStorage.getItem("token");
     console.log(token);
-    fetch("https://api.discogs.com/labels/" + id, {
+    fetch("https://api.discogs.com/labels/" + this.props.match.params.id, {
       method: "GET",
       headers: {
         Authorization:
@@ -78,6 +69,8 @@ export default class Label extends Component {
         if (res.status === 200) {
           return res.json();
         } else if (res.status === 500) {
+          console.log(res.json());
+          throw new Error(res.text());
         }
       })
       .then(res => {
@@ -103,6 +96,7 @@ export default class Label extends Component {
             if (res.status === 200) {
               return res.json();
             } else if (res.status === 401) {
+              console.log(res.json());
               throw new Error("invalid token");
             }
           })
@@ -112,6 +106,7 @@ export default class Label extends Component {
             // this.setState({ artists, album });
             let nextAlbums = res.albums.next;
             let nextArtists = res.artists.next;
+            console.log(nextArtists);
             while (nextAlbums) {
               fetch(nextAlbums, {
                 method: "GET",
@@ -126,11 +121,13 @@ export default class Label extends Component {
                 })
                 .then(res => {
                   nextAlbums = res.albums.next;
+                  console.log(res);
                   releases.push.apply(releases, res.albums.items);
                 })
                 .catch(res => console.log(res));
             }
-            while (nextArtists) {
+            while (nextArtists !== null) {
+              console.log(nextArtists);
               fetch(nextArtists, {
                 method: "GET",
                 headers: {
@@ -138,13 +135,20 @@ export default class Label extends Component {
                 }
               })
                 .then(res => {
+                  // console.log(res.json());
                   if (res.status === 200) {
                     return res.json();
+                  } else if (res.status == 401) {
+                    console.log(res);
+                    throw new Error(res.text());
                   }
                 })
                 .then(res => {
+                  console.log(res);
                   nextArtists = res.artists.next;
-                  artists.push.apply(artists, res.artists.items);
+                  Array.prototype.push.apply(artists, res.artists.items);
+                  console.log(artists.length);
+                  this.setState({ artists });
                 })
                 .catch(res => console.log(res));
             }
@@ -164,14 +168,14 @@ export default class Label extends Component {
             singles.sort(this.compareDate);
             compilations.sort(this.compareDate);
             console.log("albums");
-            console.log(albums);
+            console.log(albums.length);
             console.log("singles");
-            console.log(singles);
+            console.log(singles.length);
             console.log("compilations");
-            console.log(compilations);
+            console.log(compilations.length);
             console.log("artists");
-            console.log(artists);
-            this.setState({ albums, singles, compilations, artists });
+            console.log(artists.length);
+            this.setState({ albums, singles, compilations });
             this.setState(state => ({
               isLoading: !state.isLoading
             }));

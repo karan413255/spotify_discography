@@ -99,7 +99,6 @@ class SearchSpotify extends Component {
         })
         .then(res => {
           const labelsList = res.results;
-          console.log(labelsList);
           this.setState({
             labelsList
           });
