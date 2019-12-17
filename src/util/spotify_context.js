@@ -1,4 +1,4 @@
-import SpotifyWebApi from "spotify-web-api-js";
+import * as SpotifyWebApi from "spotify-web-api-js";
 import React from "react";
 
 export const spotifyApi = new SpotifyWebApi();

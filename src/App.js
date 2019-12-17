@@ -7,40 +7,42 @@ import "./App.css";
 import { spotifyApi, SpotifyContext } from "./util/spotify_context";
 import Label from "./views/Label";
 
-class Home extends Component {
-  render() {
-    return (
-      <div>
-        {this.props.loggedIn ? (
-          <div className="search-box">
-            <Link to="/search">
-              <span className="search-placeholder">Search</span>
-            </Link>
-          </div>
-        ) : (
-          <div className="search-box">
-            <a href="http://localhost:8888">
-              <span className="search-placeholder">Login to Spotify</span>
-            </a>
-          </div>
-        )}
-      </div>
-    );
-  }
-}
+const Home = props => {
+  return (
+    <div>
+      {props.loggedIn ? (
+        <div className="search-box">
+          <Link to="/search">
+            <span className="search-placeholder">Search</span>
+          </Link>
+        </div>
+      ) : (
+        <div className="search-box">
+          <a href="http://localhost:8888/login">
+            <span className="search-placeholder">Login to Spotify</span>
+          </a>
+        </div>
+      )}
+    </div>
+  );
+};
 
 class App extends Component {
   constructor() {
     super();
     const params = this.getHashParams();
     const token = params.access_token;
-    if (token) {
-      spotifyApi.setAccessToken(token);
-      // console.log(spotifyApi.getAccessToken());
-    }
+    const refreshToken = params.refresh_token;
+    const error = params.error;
+    // spotifyApi.setAccessToken(token);
+    console.log(localStorage.getItem("token"));
+    // console.log(token);
+    // if (token) {
+    //   localStorage.setItem("token", token);
+    // }
     this.state = {
-      loggedIn: token ? true : false
-      // nowPlaying: { name: "Not Checked", albumArt: "" }
+      loggedIn: token ? true : false,
+      spotify: spotifyApi
     };
   }
 
@@ -57,20 +59,38 @@ class App extends Component {
     return hashParams;
   }
 
+  generateRandomString(length) {
+    var text = "";
+    var possible =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < length; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
+  }
+
+  componentDidMount() {
+    let token = localStorage.getItem("token");
+    
+    if (!token) {
+      this.setState({ loggedIn: false });
+    }
+  }
   render() {
     return (
       <div className="spotify-discography-home">
         <Router>
-          <SpotifyContext.Provider value={spotifyApi}>
+          <SpotifyContext.Provider value={this.state.spotify}>
             <Route
               exact
               path="/"
               render={routeProps => (
-                <SearchSpotify {...routeProps} loggedIn={this.state.loggedIn} />
+                <Home {...routeProps} loggedIn={this.state.loggedIn} />
               )}
             />
             <Route
-              path="/search"
+              path="/search/"
               render={routeProps => <SearchSpotify {...routeProps} />}
             />
             <Route

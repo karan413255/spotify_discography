@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import album from "../constants/album";
+import { Route } from "react-router-dom";
 
 class Album extends Component {
   constructor(props) {
@@ -40,6 +41,27 @@ class Album extends Component {
                 <li key={track.id}>{track.name}</li>
               ))}
             </ol>
+          </div>
+          <div className="album_date">{album.release_date}</div>
+          <div className="album_label">
+            <Route
+              render={({ history }) => (
+                <a
+                  href=""
+                  onClick={() => {
+                    history.push({
+                      pathname: "/search/",
+                      state: {
+                        searchValue: album.label,
+                        searchType: "label"
+                      }
+                    });
+                  }}
+                >
+                  {album.label}
+                </a>
+              )}
+            ></Route>
           </div>
         </div>
       </div>

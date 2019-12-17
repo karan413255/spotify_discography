@@ -2598,12 +2598,7 @@
           "href": null,
           "total": 3205239
         },
-        "genres": [
-          "edm",
-          "progressive house",
-          "progressive trance",
-          "trance"
-        ],
+        "genres": ["edm", "progressive house", "progressive trance", "trance"],
         "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
         "id": "0SfsnGyD8FpIN4U4WCkBZ5",
         "images": [
@@ -2678,9 +2673,7 @@
           "href": null,
           "total": 82459
         },
-        "genres": [
-          "australian pop"
-        ],
+        "genres": ["australian pop"],
         "href": "https://api.spotify.com/v1/artists/1rw8ZTLnDHd74TWDDukjVi",
         "id": "1rw8ZTLnDHd74TWDDukjVi",
         "images": [
@@ -2713,9 +2706,7 @@
           "href": null,
           "total": 301253
         },
-        "genres": [
-          "progressive uplifting trance"
-        ],
+        "genres": ["progressive uplifting trance"],
         "href": "https://api.spotify.com/v1/artists/29zsVzEH33dD5QqxeL8dvy",
         "id": "29zsVzEH33dD5QqxeL8dvy",
         "images": [
@@ -2748,9 +2739,7 @@
           "href": null,
           "total": 8920
         },
-        "genres": [
-          "canadian pop"
-        ],
+        "genres": ["canadian pop"],
         "href": "https://api.spotify.com/v1/artists/6NXk2pLFocS2OkNdT7ncBt",
         "id": "6NXk2pLFocS2OkNdT7ncBt",
         "images": [
@@ -2865,9 +2854,7 @@
           "href": null,
           "total": 8933
         },
-        "genres": [
-          "la pop"
-        ],
+        "genres": ["la pop"],
         "href": "https://api.spotify.com/v1/artists/24CzPFC4y3bM4AkUnZfuAU",
         "id": "24CzPFC4y3bM4AkUnZfuAU",
         "images": [
@@ -2933,13 +2920,7 @@
           "href": null,
           "total": 4927780
         },
-        "genres": [
-          "dance pop",
-          "pop",
-          "pop rap",
-          "r&b",
-          "urban contemporary"
-        ],
+        "genres": ["dance pop", "pop", "pop rap", "r&b", "urban contemporary"],
         "href": "https://api.spotify.com/v1/artists/21E3waRsmPlU7jZsS13rcj",
         "id": "21E3waRsmPlU7jZsS13rcj",
         "images": [
@@ -3113,9 +3094,7 @@
           "href": null,
           "total": 5765
         },
-        "genres": [
-          "vocal trance"
-        ],
+        "genres": ["vocal trance"],
         "href": "https://api.spotify.com/v1/artists/2r7POU2f5jV6x3k4vsNwrM",
         "id": "2r7POU2f5jV6x3k4vsNwrM",
         "images": [
@@ -3188,10 +3167,7 @@
           "href": null,
           "total": 6700712
         },
-        "genres": [
-          "electro house",
-          "pop nacional"
-        ],
+        "genres": ["electro house", "pop nacional"],
         "href": "https://api.spotify.com/v1/artists/0NGAZxHanS9e0iNHpR8f2W",
         "id": "0NGAZxHanS9e0iNHpR8f2W",
         "images": [
@@ -3369,9 +3345,7 @@
           "href": null,
           "total": 6151
         },
-        "genres": [
-          "panamanian pop"
-        ],
+        "genres": ["panamanian pop"],
         "href": "https://api.spotify.com/v1/artists/0vN342SOFAsCVGGZwLU9AF",
         "id": "0vN342SOFAsCVGGZwLU9AF",
         "images": [
@@ -3489,9 +3463,7 @@
           "href": null,
           "total": 2860
         },
-        "genres": [
-          "pop edm"
-        ],
+        "genres": ["pop edm"],
         "href": "https://api.spotify.com/v1/artists/2ITbqEgyp32vL3BxEFmQ1V",
         "id": "2ITbqEgyp32vL3BxEFmQ1V",
         "images": [
@@ -3630,9 +3602,7 @@
           "href": null,
           "total": 27508
         },
-        "genres": [
-          "progressive electro house"
-        ],
+        "genres": ["progressive electro house"],
         "href": "https://api.spotify.com/v1/artists/36VSvhsPFTdsj1CtmatPiQ",
         "id": "36VSvhsPFTdsj1CtmatPiQ",
         "images": [
@@ -3785,9 +3755,7 @@
           "href": null,
           "total": 11019
         },
-        "genres": [
-          "pop edm"
-        ],
+        "genres": ["pop edm"],
         "href": "https://api.spotify.com/v1/artists/0sSB3cIRBuBGa1UXLsQtaw",
         "id": "0sSB3cIRBuBGa1UXLsQtaw",
         "images": [
@@ -3820,9 +3788,7 @@
           "href": null,
           "total": 23420
         },
-        "genres": [
-          "deep big room"
-        ],
+        "genres": ["deep big room"],
         "href": "https://api.spotify.com/v1/artists/4I4ZRmxuOEADKSea0rNq3h",
         "id": "4I4ZRmxuOEADKSea0rNq3h",
         "images": [
@@ -3855,9 +3821,7 @@
           "href": null,
           "total": 3411
         },
-        "genres": [
-          "swedish pop"
-        ],
+        "genres": ["swedish pop"],
         "href": "https://api.spotify.com/v1/artists/5M2y5A6d5QZjw9JeKClagC",
         "id": "5M2y5A6d5QZjw9JeKClagC",
         "images": [
@@ -4157,11 +4121,7 @@
           "href": null,
           "total": 48183
         },
-        "genres": [
-          "candy pop",
-          "electropop",
-          "post-teen pop"
-        ],
+        "genres": ["candy pop", "electropop", "post-teen pop"],
         "href": "https://api.spotify.com/v1/artists/7dtJROxWQe3fxxF5t7o67N",
         "id": "7dtJROxWQe3fxxF5t7o67N",
         "images": [
@@ -4318,11 +4278,7 @@
           "href": null,
           "total": 66406
         },
-        "genres": [
-          "progressive trance",
-          "uplifting trance",
-          "vocal trance"
-        ],
+        "genres": ["progressive trance", "uplifting trance", "vocal trance"],
         "href": "https://api.spotify.com/v1/artists/1t65YxEAtU3iii6bCzSGF8",
         "id": "1t65YxEAtU3iii6bCzSGF8",
         "images": [

@@ -1,83 +1,148 @@
 import React, { Component } from "react";
 import { SpotifyContext } from "../util/spotify_context";
-import axios from "axios";
-import spotify_search from "../constants/search";
-import labels from "../constants/labels";
-import Album from "../components/album";
+// import axios from "axios";
+// import spotify_search from "../constants/search";
+// import labels from "../constants/labels";
+// import Album from "../components/album";
 import Artist from "../components/artist";
 import Label from "../components/label";
+import query_string from "query-string";
+import { Route } from "react-router-dom";
 
 class SearchSpotify extends Component {
   constructor(props) {
     super(props);
-    let spotifyApi = this.context;
     this.state = {
-      searchValue: "",
-      searchType: "",
-      // artistList: [],
+      searchValue: this.props.location.state
+        ? this.props.location.state.searchValue
+          ? this.props.location.state.searchValue
+          : ""
+        : "",
+      searchType: this.props.location.state
+        ? this.props.location.state.searchType
+          ? this.props.location.state.searchType
+          : "Label"
+        : "Label",
+      artistList: [],
       albumsList: [],
       songsList: [],
-      labelsList: []
+      labelsList: [],
+      isValidToken: true
     };
   }
 
-  componentDidMount() {
-    // api call to get the search term details
-    this.getSearchResult();
-  }
-
   getSearchResult = () => {
-    // axios.get("https://api.spotify.com/v1/search", {
-    //   params: {
-    //     q: "armin van buuren",
-    //     type: "album,artist,track",
-    //   },
-    //   headers: {
-    //     Authorization:
-    //       "Bearer AQCz9GKyEI3XZ9ti40NumeXdCKnSlu_plCOSecLUNvHdVJ3W8NKELCpyZ2msO1yAN2KK_wbmqRIXdDGc6YnYnjrLxwgjNEbCxlANgzD5GT_YkhssuFc0Dkaq98zIilwJnvE5EcQyKDYF7M7NieqDyk2HQbDUpuR9Vkz4tfQJsBUoEkJOF5r7Bp2cycCKtN5bzH-jmKPm0FhnwgjiEYNAcTJJkl0jGFKkvSRjXOxCzf6pZjoCTF6TbFut8hepeY22pT9dmCLth6qYbQVV2jxcoDOrtWGYdihSudvYOVFftxik-U-CK61tLOHE1HzvLPR7LvvKFkDqYoS2UcBGuEJ8hFDpIzkkdiRyOZ0HxAqmQZscDlmJoMGYZReQNAjiA88zZ6KX-fcxxHZ0VTKqAtNirp0ia-ouN5icUMjwjFWzlmjdhNds3ZXqMY1YfSW_4JyaHDT04mFtzyBTLJIPNjwHxseCJsHHfWYa9QIV6vb1kP4v5sK9u43LbJ5cXCxmOcUqX7bRzV1VIui4jru09KHOxWM5Kkll9Uk89OkG5CHhPkNP-J3C_GOtM4Cp&state=VxPdCxu3GDMn88XG"
-    //   }
-    // });
-    // this.spotifyApi.search("armin van buuren").then(response => {
-    //   console.log(response);
-    // });
-    // this.spotifyApi.getMyCurrentPlaybackState().then(response => {
-    //   this.setState({
-    //     nowPlaying: {
-    //       name: response.item.name,
-    //       albumArt: response.item.album.images[0].url
-    //     }
-    //   });
-    // });
-    var search = "";
+    let artistList;
+    const token = localStorage.getItem("token");
+    console.log("storage token: " + token);
+    if (this.state.searchType === "Artist") {
+      // spotifyApi
+      //   .search(`${this.state.searchType}:${this.state.searchValue}`, {
+      //     type: "artist",
+      //     limit: 50,
+      //     offset: 0,
+      //     market: "from_token"
+      //   })
+      //   .then(response => {
+      //     console.log(response);
+      //   });
 
-    // var albumsList = spotify_search.albums.items;
-    var artistList = spotify_search.artists.items;
-    var labelsList = labels.results;
-    // var filteredAlbumList = [];
-    // albumsList.forEach(album => {
-    //   if (album.label.contains()) {
-    //   }
-    // });
-    this.setState({
-      // albumsList,
-      artistList,
-      labelsList,
-      searchType: "artist"
-    });
+      const query = {
+        query: `artist:${this.state.searchValue}`,
+        type: "artist",
+        market: "IN",
+        limit: 50,
+        offset: 0
+      };
+      fetch(
+        "https://api.spotify.com/v1/search?" + query_string.stringify(query),
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+        .then(res => {
+          if (res.status === 200) {
+            return res.json();
+          } else if (res.status === 401) {
+            this.setState({ isValidToken: false });
+          }
+        })
+        .then(res => {
+          artistList = res.artists.items;
+          this.setState({ artistList });
+        })
+        .catch(e => console.log(e));
+    } else if (this.state.searchType === "Label") {
+      const query = {
+        q: this.state.searchValue,
+        type: "label"
+      };
+      fetch(
+        "https://api.discogs.com/database/search?" +
+          query_string.stringify(query),
+        {
+          method: "GET",
+          headers: {
+            Authorization:
+              "Discogs key=BSpPEtIlRNFpFoJuOjgC, secret=PBhnbfxxNCAjHoXSrNkpyzMtxXUsVdkK"
+          }
+        }
+      )
+        .then(res => {
+          if (res.status === 200) {
+            return res.json();
+          } else if (res.status === 500) {
+          }
+        })
+        .then(res => {
+          const labelsList = res.results;
+          console.log(labelsList);
+          this.setState({
+            labelsList
+          });
+        })
+        .catch(e => console.log(e));
+    }
+  };
+
+  handleSearchType = e => {
+    e.preventDefault();
+    this.setState({ searchType: e.target.value });
   };
 
   render() {
-    var { artistList, labelsList, searchType } = this.state;
+    const { artistList, labelsList, searchType, isValidToken } = this.state;
+    if (!isValidToken)
+      return <Route render={({ history }) => history.replace("/")}></Route>;
     return (
       <div className="search">
+        <div className="search-dropdown">
+          <select
+            name="Search by type"
+            defaultChecked="Label"
+            onChange={e => {
+              e.persist();
+              this.setState({ searchType: e.target.value });
+            }}
+          >
+            <option value="Label">Label</option>
+            <option value="Artist">Artist</option>
+          </select>
+        </div>
         <div className="search-box">
-          <input type="text"></input>
-          <button>Search</button>
+          <input
+            type="text"
+            onChange={e => this.setState({ searchValue: e.target.value })}
+          ></input>
+          <button onClick={this.getSearchResult}>Search</button>
         </div>
 
         {/* labels list */}
-        {searchType === "label" ? (
-          <div classNam="search-label">
+        {searchType === "Label" ? (
+          <div className="search-label">
             <h3 className="search-label--header">Labels</h3>
             <div className="search-label--widget">
               {labelsList
@@ -101,7 +166,7 @@ class SearchSpotify extends Component {
         </div> */}
 
         {/* artist list */}
-        {searchType === "artist" ? (
+        {searchType === "Artist" ? (
           <div className="search-artist">
             <h3 className="search-artist--header">Artists</h3>
             <div className="search-artist--widget">

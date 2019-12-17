@@ -13,126 +13,60 @@
     },
     {
       "external_urls": {
-        "spotify": "https://open.spotify.com/artist/29zsVzEH33dD5QqxeL8dvy"
+        "spotify": "https://open.spotify.com/artist/21E3waRsmPlU7jZsS13rcj"
       },
-      "href": "https://api.spotify.com/v1/artists/29zsVzEH33dD5QqxeL8dvy",
-      "id": "29zsVzEH33dD5QqxeL8dvy",
-      "name": "Vini Vici",
+      "href": "https://api.spotify.com/v1/artists/21E3waRsmPlU7jZsS13rcj",
+      "id": "21E3waRsmPlU7jZsS13rcj",
+      "name": "Ne-Yo",
       "type": "artist",
-      "uri": "spotify:artist:29zsVzEH33dD5QqxeL8dvy"
+      "uri": "spotify:artist:21E3waRsmPlU7jZsS13rcj"
     }
-  ],
-  "available_markets": [
-    "AE",
-    "AR",
-    "AT",
-    "BE",
-    "BG",
-    "BH",
-    "BO",
-    "CA",
-    "CH",
-    "CL",
-    "CO",
-    "CY",
-    "CZ",
-    "DE",
-    "DK",
-    "DO",
-    "DZ",
-    "EC",
-    "EE",
-    "EG",
-    "FI",
-    "FR",
-    "GB",
-    "GR",
-    "HK",
-    "HU",
-    "ID",
-    "IE",
-    "IL",
-    "IN",
-    "IS",
-    "JO",
-    "KW",
-    "LB",
-    "LI",
-    "LT",
-    "LU",
-    "LV",
-    "MA",
-    "MC",
-    "MT",
-    "MY",
-    "NL",
-    "NO",
-    "OM",
-    "PE",
-    "PH",
-    "PL",
-    "PS",
-    "PY",
-    "QA",
-    "RO",
-    "SA",
-    "SE",
-    "SG",
-    "SK",
-    "SV",
-    "TH",
-    "TN",
-    "TR",
-    "TW",
-    "US",
-    "UY",
-    "VN",
-    "ZA"
   ],
   "copyrights": [
     {
-      "text": "2016 Armada Music B.V.",
+      "text": "2019 Armada Music B.V.",
       "type": "C"
     },
     {
-      "text": "2016 Armin Audio B.V. under exclusive license to Armada Music B.V.",
+      "text": "2019 Armada Music B.V. under exclusive license from Armin Audio B.V.",
       "type": "P"
     }
   ],
   "external_ids": {
-    "upc": "8718522120756"
+    "upc": "8718522280917"
   },
   "external_urls": {
-    "spotify": "https://open.spotify.com/album/6VEtDjgVAhRUJPxi4XFCfv"
+    "spotify": "https://open.spotify.com/album/1rybcNrkXCWyuBW6TVaCxs"
   },
   "genres": [],
-  "href": "https://api.spotify.com/v1/albums/6VEtDjgVAhRUJPxi4XFCfv",
-  "id": "6VEtDjgVAhRUJPxi4XFCfv",
+  "href": "https://api.spotify.com/v1/albums/1rybcNrkXCWyuBW6TVaCxs",
+  "id": "1rybcNrkXCWyuBW6TVaCxs",
   "images": [
     {
       "height": 640,
-      "url": "https://i.scdn.co/image/ab67616d0000b273488a5ccfa537450e19c05aae",
+      "url": "https://i.scdn.co/image/f77ee7e945185d932fc42a9bef154cff638a7a9e",
       "width": 640
     },
     {
       "height": 300,
-      "url": "https://i.scdn.co/image/ab67616d00001e02488a5ccfa537450e19c05aae",
+      "url": "https://i.scdn.co/image/87088ba1bc76f492c9b48d7923eeb15ab821fd38",
       "width": 300
     },
     {
       "height": 64,
-      "url": "https://i.scdn.co/image/ab67616d00004851488a5ccfa537450e19c05aae",
+      "url": "https://i.scdn.co/image/6a41c8ff2b9a000e85f2381bc74aea06fbf52c69",
       "width": 64
     }
   ],
+  "is_playable": true,
   "label": "Armind",
-  "name": "Great Spirit",
+  "name": "Unlove You (Club Mix)",
   "popularity": 41,
-  "release_date": "2016-12-12",
+  "release_date": "2019-12-06",
   "release_date_precision": "day",
-  "total_tracks": 2,
+  "total_tracks": 1,
   "tracks": {
-    "href": "https://api.spotify.com/v1/albums/6VEtDjgVAhRUJPxi4XFCfv/tracks?offset=0&limit=50",
+    "href": "https://api.spotify.com/v1/albums/1rybcNrkXCWyuBW6TVaCxs/tracks?offset=0&limit=50&market=from_token",
     "items": [
       {
         "artists": [
@@ -148,229 +82,38 @@
           },
           {
             "external_urls": {
-              "spotify": "https://open.spotify.com/artist/29zsVzEH33dD5QqxeL8dvy"
+              "spotify": "https://open.spotify.com/artist/21E3waRsmPlU7jZsS13rcj"
             },
-            "href": "https://api.spotify.com/v1/artists/29zsVzEH33dD5QqxeL8dvy",
-            "id": "29zsVzEH33dD5QqxeL8dvy",
-            "name": "Vini Vici",
+            "href": "https://api.spotify.com/v1/artists/21E3waRsmPlU7jZsS13rcj",
+            "id": "21E3waRsmPlU7jZsS13rcj",
+            "name": "Ne-Yo",
             "type": "artist",
-            "uri": "spotify:artist:29zsVzEH33dD5QqxeL8dvy"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/62RdOEwjfXjFOQpKdufMR7"
-            },
-            "href": "https://api.spotify.com/v1/artists/62RdOEwjfXjFOQpKdufMR7",
-            "id": "62RdOEwjfXjFOQpKdufMR7",
-            "name": "Hilight Tribe",
-            "type": "artist",
-            "uri": "spotify:artist:62RdOEwjfXjFOQpKdufMR7"
+            "uri": "spotify:artist:21E3waRsmPlU7jZsS13rcj"
           }
         ],
-        "available_markets": [
-          "AE",
-          "AR",
-          "AT",
-          "BE",
-          "BG",
-          "BH",
-          "BO",
-          "CA",
-          "CH",
-          "CL",
-          "CO",
-          "CY",
-          "CZ",
-          "DE",
-          "DK",
-          "DO",
-          "DZ",
-          "EC",
-          "EE",
-          "EG",
-          "FI",
-          "FR",
-          "GB",
-          "GR",
-          "HK",
-          "HU",
-          "ID",
-          "IE",
-          "IL",
-          "IN",
-          "IS",
-          "JO",
-          "KW",
-          "LB",
-          "LI",
-          "LT",
-          "LU",
-          "LV",
-          "MA",
-          "MC",
-          "MT",
-          "MY",
-          "NL",
-          "NO",
-          "OM",
-          "PE",
-          "PH",
-          "PL",
-          "PS",
-          "PY",
-          "QA",
-          "RO",
-          "SA",
-          "SE",
-          "SG",
-          "SK",
-          "SV",
-          "TH",
-          "TN",
-          "TR",
-          "TW",
-          "US",
-          "UY",
-          "VN",
-          "ZA"
-        ],
         "disc_number": 1,
-        "duration_ms": 215773,
+        "duration_ms": 161953,
         "explicit": false,
         "external_urls": {
-          "spotify": "https://open.spotify.com/track/6UOUR1yagi29vs9MSbGnGp"
+          "spotify": "https://open.spotify.com/track/6r8Yy7shor7xngNFFdNsZi"
         },
-        "href": "https://api.spotify.com/v1/tracks/6UOUR1yagi29vs9MSbGnGp",
-        "id": "6UOUR1yagi29vs9MSbGnGp",
+        "href": "https://api.spotify.com/v1/tracks/6r8Yy7shor7xngNFFdNsZi",
+        "id": "6r8Yy7shor7xngNFFdNsZi",
         "is_local": false,
-        "name": "Great Spirit",
-        "preview_url": "https://p.scdn.co/mp3-preview/3266a109432f0ce33ee60be2e99a58d47c1193cc?cid=3fc3b4d87709460c957f2ab8bbf83fbd",
+        "is_playable": true,
+        "name": "Unlove You - Club Mix",
+        "preview_url": "https://p.scdn.co/mp3-preview/a6d2bad9b7b8c6dc4463e63e08966bb806f87f75?cid=3fc3b4d87709460c957f2ab8bbf83fbd",
         "track_number": 1,
         "type": "track",
-        "uri": "spotify:track:6UOUR1yagi29vs9MSbGnGp"
-      },
-      {
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/0SfsnGyD8FpIN4U4WCkBZ5"
-            },
-            "href": "https://api.spotify.com/v1/artists/0SfsnGyD8FpIN4U4WCkBZ5",
-            "id": "0SfsnGyD8FpIN4U4WCkBZ5",
-            "name": "Armin van Buuren",
-            "type": "artist",
-            "uri": "spotify:artist:0SfsnGyD8FpIN4U4WCkBZ5"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/29zsVzEH33dD5QqxeL8dvy"
-            },
-            "href": "https://api.spotify.com/v1/artists/29zsVzEH33dD5QqxeL8dvy",
-            "id": "29zsVzEH33dD5QqxeL8dvy",
-            "name": "Vini Vici",
-            "type": "artist",
-            "uri": "spotify:artist:29zsVzEH33dD5QqxeL8dvy"
-          },
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/62RdOEwjfXjFOQpKdufMR7"
-            },
-            "href": "https://api.spotify.com/v1/artists/62RdOEwjfXjFOQpKdufMR7",
-            "id": "62RdOEwjfXjFOQpKdufMR7",
-            "name": "Hilight Tribe",
-            "type": "artist",
-            "uri": "spotify:artist:62RdOEwjfXjFOQpKdufMR7"
-          }
-        ],
-        "available_markets": [
-          "AE",
-          "AR",
-          "AT",
-          "BE",
-          "BG",
-          "BH",
-          "BO",
-          "CA",
-          "CH",
-          "CL",
-          "CO",
-          "CY",
-          "CZ",
-          "DE",
-          "DK",
-          "DO",
-          "DZ",
-          "EC",
-          "EE",
-          "EG",
-          "FI",
-          "FR",
-          "GB",
-          "GR",
-          "HK",
-          "HU",
-          "ID",
-          "IE",
-          "IL",
-          "IN",
-          "IS",
-          "JO",
-          "KW",
-          "LB",
-          "LI",
-          "LT",
-          "LU",
-          "LV",
-          "MA",
-          "MC",
-          "MT",
-          "MY",
-          "NL",
-          "NO",
-          "OM",
-          "PE",
-          "PH",
-          "PL",
-          "PS",
-          "PY",
-          "QA",
-          "RO",
-          "SA",
-          "SE",
-          "SG",
-          "SK",
-          "SV",
-          "TH",
-          "TN",
-          "TR",
-          "TW",
-          "US",
-          "UY",
-          "VN",
-          "ZA"
-        ],
-        "disc_number": 1,
-        "duration_ms": 457826,
-        "explicit": false,
-        "external_urls": {
-          "spotify": "https://open.spotify.com/track/1bxtePWzYybaPiUZqvgQVf"
-        },
-        "href": "https://api.spotify.com/v1/tracks/1bxtePWzYybaPiUZqvgQVf",
-        "id": "1bxtePWzYybaPiUZqvgQVf",
-        "is_local": false,
-        "name": "Great Spirit - Extended Mix",
-        "preview_url": "https://p.scdn.co/mp3-preview/212c24c53d0358c62bb2e09099b1498466ea548d?cid=3fc3b4d87709460c957f2ab8bbf83fbd",
-        "track_number": 2,
-        "type": "track",
-        "uri": "spotify:track:1bxtePWzYybaPiUZqvgQVf"
+        "uri": "spotify:track:6r8Yy7shor7xngNFFdNsZi"
       }
     ],
     "limit": 50,
     "next": null,
     "offset": 0,
     "previous": null,
-    "total": 2
+    "total": 1
   },
   "type": "album",
-  "uri": "spotify:album:6VEtDjgVAhRUJPxi4XFCfv"
+  "uri": "spotify:album:1rybcNrkXCWyuBW6TVaCxs"
 }
