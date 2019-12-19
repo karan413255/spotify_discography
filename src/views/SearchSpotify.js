@@ -25,16 +25,20 @@ class SearchSpotify extends Component {
         : "Label",
       artistList: [],
       albumsList: [],
-      songsList: [],
-      labelsList: [],
-      isValidToken: true
+      isValidToken: true,
+      isLoading: false
     };
   }
-
+  componentDidMount() {
+    if (this.state.searchType && this.state.searchValue) {
+      this.getSearchResult();
+    }
+  }
   getSearchResult = () => {
     let artistList;
     const token = localStorage.getItem("token");
     console.log("storage token: " + token);
+    this.setState({ isLoading: true });
     if (this.state.searchType === "Artist") {
       const query = {
         query: `artist:${this.state.searchValue}`,
@@ -56,12 +60,14 @@ class SearchSpotify extends Component {
           if (res.status === 200) {
             return res.json();
           } else if (res.status === 401) {
-            this.setState({ isValidToken: false });
+            localStorage.removeItem("token");
+            this.setState({ isValidToken: false, isLoading: false });
           }
         })
         .then(res => {
+          console.log(res);
           artistList = res.artists.items;
-          this.setState({ artistList });
+          this.setState({ artistList, isLoading: false });
         })
         .catch(e => console.log(e));
     } else if (this.state.searchType === "Label") {
@@ -88,9 +94,7 @@ class SearchSpotify extends Component {
         })
         .then(res => {
           const labelsList = res.results;
-          this.setState({
-            labelsList
-          });
+          this.setState({ labelsList, isLoading: false });
         })
         .catch(e => console.log(e));
     }
@@ -102,7 +106,17 @@ class SearchSpotify extends Component {
   };
 
   render() {
-    const { artistList, labelsList, searchType, isValidToken } = this.state;
+    const {
+      artistList,
+      labelsList,
+      searchType,
+      isValidToken,
+      isLoading
+    } = this.state;
+
+    if (isLoading) {
+      return "Loading...";
+    }
     if (!isValidToken)
       return <Route render={({ history }) => history.replace("/")}></Route>;
     return (

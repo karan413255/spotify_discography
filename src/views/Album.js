@@ -31,6 +31,7 @@ class Album extends Component {
           return res.json();
         } else if (res.status === 401) {
           console.log(res.json());
+          localStorage.removeItem("token");
           throw new Error(res.text);
         }
       })
@@ -57,12 +58,14 @@ class Album extends Component {
         <div className="album-main">
           <div className="album-info">
             <div className="album-image">
-              <img src={album.images[1].url} alt={album.name}></img>
+              {album.images.length > 0 && (
+                <img src={album.images[0].url} alt={album.name}></img>
+              )}
             </div>
             <div className="album-artists">
               <ul>
                 {album.artists.map(artist => (
-                  <Link to={`/artist/${artist.id}`}>
+                  <Link key={artist.id} to={`/artist/${artist.id}`}>
                     <li key={artist.id}>{artist.name}</li>
                   </Link>
                 ))}
@@ -88,7 +91,7 @@ class Album extends Component {
                       pathname: "/search/",
                       state: {
                         searchValue: album.label,
-                        searchType: "label"
+                        searchType: "Label"
                       }
                     });
                   }}

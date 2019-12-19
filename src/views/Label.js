@@ -75,8 +75,11 @@ export default class Label extends Component {
       .then(res => {
         console.log(res);
         this.setState({ label: res });
+        const name = res.name
+          .replace(/\([0-9]+\)$/g, "")
+          .replace(/[&\/\\#,+\(\)$~%\.!^'"\;:*?\[\]<>{}]/g, "");
         const query = {
-          query: `label:"${res.name}"`,
+          query: `label:"${name}"`,
           type: "album,artist,playlist",
           market: "from_token",
           limit: 50,
@@ -95,19 +98,18 @@ export default class Label extends Component {
             if (res.status === 200) {
               return res.json();
             } else if (res.status === 401) {
+              localStorage.removeItem("token");
               console.log(res.json());
               throw new Error("invalid token");
             }
           })
           .then(async res => {
+            console.log(res);
             let artists = res.artists.items;
             let releases = res.albums.items;
-            // this.setState({ artists, album });
             let nextAlbums = res.albums.next;
             let nextArtists = res.artists.next;
             let data, response;
-            console.log(nextAlbums);
-            console.log(nextArtists);
             while (nextAlbums !== null) {
               response = await fetch(nextAlbums, {
                 method: "GET",
@@ -118,11 +120,12 @@ export default class Label extends Component {
               if (response.status === 200) {
                 data = await response.json();
               } else if (response.status === 401) {
+                localStorage.removeItem("token");
                 console.log(response);
               }
-              console.log(data);
+              // console.log(data);
               nextAlbums = data.albums.next;
-              console.log(nextAlbums);
+              // console.log(nextAlbums);
               Array.prototype.push.apply(releases, data.albums.items);
             }
             while (nextArtists !== null) {
@@ -135,12 +138,13 @@ export default class Label extends Component {
               if (response.status === 200) {
                 data = await response.json();
               } else if (response.status === 401) {
+                localStorage.removeItem("token");
                 console.log(response);
               }
-              console.log(data);
+              // console.log(data);
               nextArtists = data.artists.next;
               Array.prototype.push.apply(artists, data.artists.items);
-              console.log(nextArtists);
+              // console.log(nextArtists);
             }
             let albums = [];
             let singles = [];
@@ -204,9 +208,52 @@ export default class Label extends Component {
             <div className="labelName">{label.name}</div>
             <div className="label-info">
               <div className="label-image">
-                <img src={label.images[0].uri} alt={label.name}></img>
+                {label.images && label.images.length > 0 && (
+                  <img src={label.images[0].uri} alt={label.name}></img>
+                )}
               </div>
               <div className="label-profile">{label.profile}</div>
+              {label.sublabels && label.sublabels.length > 0 && (
+                <div className="label-sublabels">
+                  <div>Sub Labels</div>
+                  <ul>
+                    {label.sublabels.map(sublabel => (
+                      <Route
+                        key={sublabel.id}
+                        render={({ history }) => (
+                          <li key={sublabel.id}>
+                            <a
+                              href=""
+                              onClick={() =>
+                                history.push(`/label/${sublabel.id}`)
+                              }
+                            >
+                              {sublabel.name}
+                            </a>
+                          </li>
+                        )}
+                      ></Route>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {label.parent_label && (
+                <div className="label-parent_label">
+                  <span>Parent Label:</span>
+                  <Route
+                    render={({ history }) => (
+                      <a
+                        href=""
+                        onClick={() => {
+                          history.push(`/label/${label.parent_label.id}`);
+                        }}
+                      >
+                        {label.parent_label.name}
+                      </a>
+                    )}
+                  ></Route>
+                </div>
+              )}
             </div>
           </div>
         )}

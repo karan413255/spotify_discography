@@ -2,25 +2,14 @@ import React from "react";
 import "../App.css";
 import { Route } from "react-router-dom";
 
-function Artist(props) {
-  const artist = props.artist;
+function Artist({ artist }) {
   return (
     <div className="artist">
       <Route
         render={({ history }) => (
-          <a
-            href=""
-            onClick={() =>
-              history.push({
-                pathname: "/artist/" + artist.id,
-                state: {
-                  artist: artist
-                }
-              })
-            }
-          >
+          <a href="" onClick={() => history.push(`/artist/${artist.id}`)}>
             {artist.images.length > 0 && (
-              <img className="artistImage" alt="" src={artist.images[1].url} />
+              <img className="artistImage" alt="" src={artist.images[0].url} />
             )}
             <div className="artistName">{artist.name}</div>
           </a>

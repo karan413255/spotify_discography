@@ -9,6 +9,8 @@ class Artist extends Component {
     this.state = {
       albums: [],
       singles: [],
+      compilations: [],
+      appearson: [],
       artist: "",
       isLoading: true
     };
@@ -22,27 +24,22 @@ class Artist extends Component {
     const token = localStorage.getItem("token");
     const id = this.props.match.params.id;
 
-    console.log(id);
-    console.log(this.artist);
-    if (!this.artist) {
-      console.log("artist id called");
-      const response = await fetch(`https://api.spotify.com/v1/artists/${id}`, {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-      let data;
-      console.log("got artist id data");
-      console.log(response);
-      if (response.status === 200) {
-        data = await response.json();
-      } else if (response.status === 401) {
-        console.log(response.json());
+    const response = await fetch(`https://api.spotify.com/v1/artists/${id}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`
       }
-      console.log(data);
-      this.setState({ artist: data });
+    });
+    let data;
+    // console.log(response);
+    if (response.status === 200) {
+      data = await response.json();
+    } else if (response.status === 401) {
+      localStorage.removeItem("token");
+      console.log(response.json());
     }
+    this.setState({ artist: data });
+
     const query = {
       include_groups: "album,single,compilation,appears_on",
       market: "from_token",
@@ -61,29 +58,63 @@ class Artist extends Component {
       }
     )
       .then(res => {
-        console.log("artist data called");
         if (res.status === 200) {
           return res.json();
         } else if (res.status === 401) {
+          localStorage.removeItem("token");
           console.log(res.json());
           throw new Error(res.text);
         }
       })
-      .then(res => {
+      .then(async res => {
         console.log(res);
-        const releases = res.items;
+        let releases = res.items;
+        let next = res.next;
+        let data, response;
+        while (next) {
+          response = await fetch(next, {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+          if (response.status === 200) {
+            data = await response.json();
+          } else if (response.status === 401) {
+            localStorage.removeItem("token");
+            console.log(response);
+          }
+          // console.log(data);
+          next = data.next;
+          // console.log(next);
+          Array.prototype.push.apply(releases, data.items);
+        }
         let albums = [];
         let singles = [];
+        let compilations = [];
+        let appearson = [];
         releases.forEach(release => {
           if (release.album_group === "album") {
             albums.push(release);
           } else if (release.album_group === "single") {
             singles.push(release);
+          } else if (release.album_group === "compilation") {
+            compilations.push(release);
+          } else if (release.album_group === "appears_on") {
+            appearson.push(release);
           }
         });
         albums.sort(this.compareDate);
         singles.sort(this.compareDate);
-        this.setState({ albums, singles, isLoading: false });
+        compilations.sort(this.compareDate);
+        appearson.sort(this.compareDate);
+        this.setState({
+          albums,
+          singles,
+          compilations,
+          appearson,
+          isLoading: false
+        });
       })
       .catch(error => {
         this.setState({ isLoading: false });
@@ -98,7 +129,14 @@ class Artist extends Component {
   };
 
   render() {
-    const { albums, singles, artist, isLoading } = this.state;
+    const {
+      albums,
+      singles,
+      artist,
+      isLoading,
+      compilations,
+      appearson
+    } = this.state;
     if (isLoading) {
       return "Loading...";
     }
@@ -106,7 +144,9 @@ class Artist extends Component {
       <div className="artistPage">
         <div className="artist-navbar">
           <div className="artist-image">
-            <img src={artist.images[1].url} alt={artist.name}></img>
+            {artist.images.length > 0 && (
+              <img src={artist.images[0].url} alt={artist.name}></img>
+            )}
           </div>
           <div className="artist-name">{artist.name}</div>
           {artist.genres.length > 0 && (
@@ -144,6 +184,30 @@ class Artist extends Component {
                   Singles
                   {singles.map(single => (
                     <Album key={single.id} album={single} />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* compilation releases */}
+            {compilations.length > 0 && (
+              <div className="artist-compilations">
+                <div>
+                  Compilation
+                  {compilations.map(compilation => (
+                    <Album key={compilation.id} album={compilation} />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* appears on releases */}
+            {appearson.length > 0 && (
+              <div className="artist-appearson">
+                <div>
+                  Appears On
+                  {appearson.map(album => (
+                    <Album key={album.id} album={album} />
                   ))}
                 </div>
               </div>
