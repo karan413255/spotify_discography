@@ -73,6 +73,7 @@ export default class Label extends Component {
         }
       })
       .then(res => {
+        console.log(res);
         this.setState({ label: res });
         const query = {
           query: `label:"${res.name}"`,

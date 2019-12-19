@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import "../App.css";
-import album from "../constants/album";
-import { Route } from "react-router-dom";
+// import album from "../constants/album";
+import { Route, Link } from "react-router-dom";
 
 class Album extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isLoading: true,
+      album: ""
+    };
   }
 
   componentDidMount() {
@@ -13,9 +17,38 @@ class Album extends Component {
     this.getAlbumDetails();
   }
 
-  getAlbumDetails = () => {};
+  getAlbumDetails = () => {
+    const token = localStorage.getItem("token");
+    const id = this.props.match.params.id;
+    fetch("https://api.spotify.com/v1/albums/" + id, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res => {
+        if (res.status === 200) {
+          return res.json();
+        } else if (res.status === 401) {
+          console.log(res.json());
+          throw new Error(res.text);
+        }
+      })
+      .then(res => {
+        console.log(res);
+        this.setState({ album: res, isLoading: false });
+      })
+      .catch(error => {
+        this.setState({ isLoading: false });
+        console.log(error);
+      });
+  };
 
   render() {
+    const { isLoading, album } = this.state;
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
     return (
       <div className="albumPage">
         <div className="album-navbar">
@@ -29,7 +62,9 @@ class Album extends Component {
             <div className="album-artists">
               <ul>
                 {album.artists.map(artist => (
-                  <li key={artist.id}>{artist.name}</li>
+                  <Link to={`/artist/${artist.id}`}>
+                    <li key={artist.id}>{artist.name}</li>
+                  </Link>
                 ))}
               </ul>
             </div>

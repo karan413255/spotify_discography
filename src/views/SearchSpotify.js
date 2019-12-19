@@ -36,21 +36,10 @@ class SearchSpotify extends Component {
     const token = localStorage.getItem("token");
     console.log("storage token: " + token);
     if (this.state.searchType === "Artist") {
-      // spotifyApi
-      //   .search(`${this.state.searchType}:${this.state.searchValue}`, {
-      //     type: "artist",
-      //     limit: 50,
-      //     offset: 0,
-      //     market: "from_token"
-      //   })
-      //   .then(response => {
-      //     console.log(response);
-      //   });
-
       const query = {
         query: `artist:${this.state.searchValue}`,
         type: "artist",
-        market: "IN",
+        market: "from_token",
         limit: 50,
         offset: 0
       };

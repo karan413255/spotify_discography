@@ -115,6 +115,11 @@ class App extends Component {
               path="/label/:id"
               render={routeProps => <Label {...routeProps} />}
             />
+            <Route
+              exact
+              path="/label/:name"
+              render={routeProps => <Label {...routeProps} />}
+            />
           </SpotifyContext.Provider>
         </Router>
       </div>
