@@ -1,20 +1,25 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from "react-router-dom";
 import SearchSpotify from "./views/SearchSpotify";
 import Artist from "./views/Artist";
 import Album from "./views/Album";
 import "./App.css";
-import { spotifyApi, SpotifyContext } from "./util/spotify_context";
+import { SpotifyContext } from "./util/spotify_context";
 import Label from "./views/Label";
+import * as SpotifyWebApi from "spotify-web-api-js";
 
-const Home = props => {
+const Home = ({ loggedIn }) => {
   return (
     <div>
-      {props.loggedIn ? (
+      {loggedIn ? (
         <div className="search-box">
-          <Link to="/search">
-            <span className="search-placeholder">Search</span>
-          </Link>
+          <Redirect to="/search" />
         </div>
       ) : (
         <div className="search-box">
@@ -28,29 +33,40 @@ const Home = props => {
 };
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: "",
+      spotify: new SpotifyWebApi()
+    };
+  }
+
+  componentDidMount() {
+    let token = localStorage.getItem("token");
+    if (token) {
+      this.setState({ loggedIn: true });
+      console.log("has token");
+      this.state.spotify.setAccessToken(token);
+      console.log(this.state.spotify.getAccessToken());
+    }
     const params = this.getHashParams();
     const refreshToken = params.refresh_token;
     const error = params.error;
     let shouldLogin = params.invalid_token;
-    // spotifyApi.setAccessToken(token);
     console.log(shouldLogin);
     if (shouldLogin) {
       localStorage.removeItem("token");
     }
     console.log(localStorage.getItem("token"));
-    let token = localStorage.getItem("token");
-    // console.log(token);
     if (params.access_token) {
       token = params.access_token;
       localStorage.setItem("token", params.access_token);
       console.log(params.access_token);
+      this.setState({ loggedIn: true });
     }
-    this.state = {
-      loggedIn: token ? true : false,
-      spotify: spotifyApi
-    };
+    if (!token) {
+      this.setState({ loggedIn: false });
+    }
   }
 
   getHashParams() {
@@ -77,47 +93,43 @@ class App extends Component {
     return text;
   }
 
-  componentDidMount() {
-    let token = localStorage.getItem("token");
-
-    if (!token) {
-      this.setState({ loggedIn: false });
-    }
-  }
   render() {
     return (
-      <div className="spotify-discography-home">
-        <Router>
+      <Router>
+        <div className="spotify-discography-home">
           <SpotifyContext.Provider value={this.state.spotify}>
-            <Route
-              path="/"
-              render={routeProps => (
-                <Home {...routeProps} loggedIn={this.state.loggedIn} />
-              )}
-            />
-            <Route
-              exact
-              path="/search/"
-              render={routeProps => <SearchSpotify {...routeProps} />}
-            />
-            <Route
-              exact
-              path="/artist/:id"
-              render={routeProps => <Artist {...routeProps} />}
-            />
-            <Route
-              exact
-              path="/album/:id"
-              render={routeProps => <Album {...routeProps} />}
-            />
-            <Route
-              exact
-              path="/label/:id"
-              render={routeProps => <Label {...routeProps} />}
-            />
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={routeProps => (
+                  <Home {...routeProps} loggedIn={this.state.loggedIn} />
+                )}
+              />
+              <Route
+                exact
+                path="/search/"
+                render={routeProps => <SearchSpotify {...routeProps} />}
+              />
+              <Route
+                exact
+                path="/artist/:id"
+                render={routeProps => <Artist {...routeProps} />}
+              />
+              <Route
+                exact
+                path="/album/:id"
+                render={routeProps => <Album {...routeProps} />}
+              />
+              <Route
+                exact
+                path="/label/:id"
+                render={routeProps => <Label {...routeProps} />}
+              />
+            </Switch>
           </SpotifyContext.Provider>
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }

@@ -30,6 +30,8 @@ class SearchSpotify extends Component {
     };
   }
   componentDidMount() {
+    let spotify = this.context;
+    console.log(`Spotify Context Token: ${spotify.getAccessToken()}`);
     if (this.state.searchType && this.state.searchValue) {
       this.getSearchResult();
     }
@@ -139,7 +141,9 @@ class SearchSpotify extends Component {
             type="text"
             onChange={e => this.setState({ searchValue: e.target.value })}
           ></input>
-          <button onClick={this.getSearchResult}>Search</button>
+          <button onClick={this.getSearchResult} type={"submit"}>
+            Search
+          </button>
         </div>
 
         {/* labels list */}
