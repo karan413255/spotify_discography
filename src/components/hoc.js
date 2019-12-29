@@ -27,7 +27,7 @@ const pageLoaderHOC = Component => {
         return <div>Loading....</div>;
       }
       if (this.props.isError) {
-        return <Redirect to="/#invalid_token=true" />;
+        return <Redirect to="/" />;
       }
 
       return <Component {...this.props} />;

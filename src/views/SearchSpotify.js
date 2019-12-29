@@ -8,6 +8,7 @@ import Artist from "../components/artist";
 import Label from "../components/label";
 import query_string from "query-string";
 import { Route } from "react-router-dom";
+import pageLoaderHOC from "../components/hoc";
 
 class SearchSpotify extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class SearchSpotify extends Component {
         : "Label",
       artistList: [],
       albumsList: [],
-      isValidToken: true,
+      isError: false,
       isLoading: false
     };
   }
@@ -58,12 +59,14 @@ class SearchSpotify extends Component {
           }
         }
       )
-        .then(res => {
+        .then(async res => {
+          console.log(res.status);
           if (res.status === 200) {
             return res.json();
           } else if (res.status === 401) {
             localStorage.removeItem("token");
-            this.setState({ isValidToken: false, isLoading: false });
+            let data = await res.json();
+            throw new Error(data);
           }
         })
         .then(res => {
@@ -71,7 +74,13 @@ class SearchSpotify extends Component {
           artistList = res.artists.items;
           this.setState({ artistList, isLoading: false });
         })
-        .catch(e => console.log(e));
+        .catch(e => {
+          console.log(e);
+          this.setState(state => ({
+            isError: !state.isError,
+            isLoading: !state.isLoading
+          }));
+        });
     } else if (this.state.searchType === "Label") {
       const query = {
         q: this.state.searchValue,
@@ -108,19 +117,7 @@ class SearchSpotify extends Component {
   };
 
   render() {
-    const {
-      artistList,
-      labelsList,
-      searchType,
-      isValidToken,
-      isLoading
-    } = this.state;
-
-    if (isLoading) {
-      return "Loading...";
-    }
-    if (!isValidToken)
-      return <Route render={({ history }) => history.replace("/")}></Route>;
+    const SearchPageLoaderHOC = pageLoaderHOC(SearchPage);
     return (
       <div className="search">
         <div className="search-dropdown">
@@ -145,49 +142,54 @@ class SearchSpotify extends Component {
             Search
           </button>
         </div>
-
-        {/* labels list */}
-        {searchType === "Label" ? (
-          <div className="search-label">
-            <h3 className="search-label--header">Labels</h3>
-            <div className="search-label--widget">
-              {labelsList
-                ? labelsList.map(label => (
-                    <Label key={label.id} label={label} />
-                  ))
-                : null}
-            </div>
-          </div>
-        ) : null}
-        {/* album list
-        <div className="search-album">
-          <h3 className="search-album--header">Albums</h3>
-          <div className="search-album--widget">
-            {albumsList
-              ? albumsList.map(album => (
-                  <Album key={album["id"]} album={album} />
-                ))
-              : null}
-          </div>
-        </div> */}
-
-        {/* artist list */}
-        {searchType === "Artist" ? (
-          <div className="search-artist">
-            <h3 className="search-artist--header">Artists</h3>
-            <div className="search-artist--widget">
-              {artistList
-                ? artistList.map(artist => (
-                    <Artist key={artist.id} artist={artist} />
-                  ))
-                : null}
-            </div>
-          </div>
-        ) : null}
+        <SearchPageLoaderHOC {...this.state} />
       </div>
     );
   }
 }
+
+const SearchPage = ({ labelsList, artistList, searchType }) => {
+  return (
+    <>
+      {/* labels list */}
+      {searchType === "Label" ? (
+        <div className="search-label">
+          <h3 className="search-label--header">Labels</h3>
+          <div className="search-label--widget">
+            {labelsList
+              ? labelsList.map(label => <Label key={label.id} label={label} />)
+              : null}
+          </div>
+        </div>
+      ) : null}
+      {/* album list
+      <div className="search-album">
+        <h3 className="search-album--header">Albums</h3>
+        <div className="search-album--widget">
+          {albumsList
+            ? albumsList.map(album => (
+                <Album key={album["id"]} album={album} />
+              ))
+            : null}
+        </div>
+      </div> */}
+
+      {/* artist list */}
+      {searchType === "Artist" ? (
+        <div className="search-artist">
+          <h3 className="search-artist--header">Artists</h3>
+          <div className="search-artist--widget">
+            {artistList
+              ? artistList.map(artist => (
+                  <Artist key={artist.id} artist={artist} />
+                ))
+              : null}
+          </div>
+        </div>
+      ) : null}
+    </>
+  );
+};
 
 SearchSpotify.contextType = SpotifyContext;
 
