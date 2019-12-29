@@ -3,9 +3,11 @@ import "../App.css";
 // import label from "../constants/label";
 // import searchLabel from "../constants/search";
 import Album from "../components/album";
+import AlbumList from "../components/album_list";
 import Artist from "../components/artist";
 import query_string from "query-string";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
+import pageLoaderHOC from "../components/hoc";
 
 export default class Label extends Component {
   constructor(props) {
@@ -52,7 +54,7 @@ export default class Label extends Component {
     return 0;
   };
 
-  getLabelDetails = async () => {
+  getLabelDetails = () => {
     this.setState(state => ({
       isLoading: !state.isLoading
     }));
@@ -94,11 +96,26 @@ export default class Label extends Component {
             }
           }
         )
-          .then(res => {
+          .then(async res => {
             if (res.status === 200) {
               return res.json();
             } else if (res.status === 401) {
               localStorage.removeItem("token");
+              // let refershToken = localStorage.getItem("refresh_token");
+              // if (!refershToken) {
+              //   let response;
+              //   query = {
+              //     refresh_token: refershToken
+              //   };
+              //   response = await fetch(
+              //     "http://localhost:8888/refresh_token?" +
+              //       query_string.stringify(query),
+              //     {
+              //       method: "GET"
+              //     }
+              //   );
+              // }
+              await res.json();
               console.log(res.json());
               throw new Error("invalid token");
             }
@@ -186,125 +203,117 @@ export default class Label extends Component {
   };
 
   render() {
-    const {
-      albums,
-      artists,
-      singles,
-      compilations,
-      label,
-      isLoading,
-      isError
-    } = this.state;
-    if (isLoading) {
-      return <div>Loading....</div>;
-    }
-    if (isError) {
-      window.location = "/#invalid_token=true";
-    }
-    return (
-      <div className="labelPage">
-        {label && (
-          <div className="label-navbar">
-            <div className="labelName">{label.name}</div>
-            <div className="label-info">
-              <div className="label-image">
-                {label.images && label.images.length > 0 && (
-                  <img src={label.images[0].uri} alt={label.name}></img>
-                )}
-              </div>
-              <div className="label-profile">{label.profile}</div>
-              {label.sublabels && label.sublabels.length > 0 && (
-                <div className="label-sublabels">
-                  <div>Sub Labels</div>
-                  <ul>
-                    {label.sublabels.map(sublabel => (
-                      <Route
-                        key={sublabel.id}
-                        render={({ history }) => (
-                          <li key={sublabel.id}>
-                            <a
-                              href=""
-                              onClick={() =>
-                                history.push(`/label/${sublabel.id}`)
-                              }
-                            >
-                              {sublabel.name}
-                            </a>
-                          </li>
-                        )}
-                      ></Route>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {label.parent_label && (
-                <div className="label-parent_label">
-                  <span>Parent Label:</span>
-                  <Route
-                    render={({ history }) => (
-                      <a
-                        href=""
-                        onClick={() => {
-                          history.push(`/label/${label.parent_label.id}`);
-                        }}
-                      >
-                        {label.parent_label.name}
-                      </a>
-                    )}
-                  ></Route>
-                </div>
+    const LabelPageLoaderHOC = pageLoaderHOC(LabelDetails);
+    return <LabelPageLoaderHOC {...this.state} />;
+  }
+}
+
+const LabelDetails = ({ label, albums, singles, compilations, artists }) => {
+  return (
+    <div className="labelPage">
+      {label && (
+        <div className="label-navbar">
+          <div className="labelName">{label.name}</div>
+          <div className="label-info">
+            <div className="label-image">
+              {label.images && label.images.length > 0 && (
+                <img src={label.images[0].uri} alt={label.name}></img>
               )}
             </div>
-          </div>
-        )}
-        <div className="label-main">
-          {/* Label Releases */}
-          <div className="label-releases">
-            <div>Releases</div>
-            {/* album releases */}
-            {albums.length > 0 && (
-              <div>
-                Albums
-                {albums.map(album => (
-                  <Album key={album.id} album={album} />
-                ))}
+            <div className="label-profile">{label.profile}</div>
+            {label.sublabels && label.sublabels.length > 0 && (
+              <div className="label-sublabels">
+                <div>Sub Labels</div>
+                <ul>
+                  {label.sublabels.map(sublabel => (
+                    <Route
+                      key={sublabel.id}
+                      render={({ history }) => (
+                        <li key={sublabel.id}>
+                          <a
+                            href=""
+                            onClick={() =>
+                              history.push(`/label/${sublabel.id}`)
+                            }
+                          >
+                            {sublabel.name}
+                          </a>
+                        </li>
+                      )}
+                    ></Route>
+                  ))}
+                </ul>
               </div>
             )}
-
-            {/* single releases */}
-            {singles.length > 0 && (
-              <div>
-                Singles
-                {singles.map(single => (
-                  <Album key={single.id} album={single} />
-                ))}
-              </div>
-            )}
-
-            {/* single releases */}
-            {compilations.length > 0 && (
-              <div>
-                Compilations
-                {compilations.map(compilation => (
-                  <Album key={compilation.id} album={compilation} />
-                ))}
+            {label.parent_label && (
+              <div className="label-parent_label">
+                <span>Parent Label:</span>
+                <Route
+                  render={({ history }) => (
+                    <a
+                      href=""
+                      onClick={() => {
+                        history.push(`/label/${label.parent_label.id}`);
+                      }}
+                    >
+                      {label.parent_label.name}
+                    </a>
+                  )}
+                ></Route>
               </div>
             )}
           </div>
+        </div>
+      )}
+      <div className="label-main">
+        {/* Label Releases */}
+        <div className="label-releases">
+          <div>Label Releases</div>
+          {/* album releases */}
+          {/* album list component */}
+          {albums.length > 0 && (
+            // <div>
+            //   Albums
+            //   {albums.map(album => (
+            //     <Album key={album.id} album={album} />
+            //   ))}
+            // </div>
+            <AlbumList albums={albums} />
+          )}
 
-          {/* Label Artist list */}
-          <div className="search-artist">
-            <h3 className="search-artist--header">Artists</h3>
-            <div className="search-artist--widget">
-              {artists
-                ? artists.map(artist => (
-                    <Artist key={artist.id} artist={artist} />
-                  ))
-                : null}
+          {/* single releases */}
+          {singles.length > 0 && (
+            <div>
+              Singles
+              {singles.map(single => (
+                <Album key={single.id} album={single} />
+              ))}
             </div>
+          )}
+
+          {/* single releases */}
+          {compilations.length > 0 && (
+            <div>
+              Compilations
+              {compilations.map(compilation => (
+                <Album key={compilation.id} album={compilation} />
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Label Artist list */}
+        <div className="search-artist">
+          <h3 className="search-artist--header">Artists</h3>
+          <div className="search-artist--widget">
+            {artists
+              ? artists.map(artist => (
+                  <Artist key={artist.id} artist={artist} />
+                ))
+              : null}
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};

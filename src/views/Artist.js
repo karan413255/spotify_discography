@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import artist from "../constants/artist";
 import Album from "../components/album";
 import query_string from "query-string";
+import pageLoaderHOC from "../components/hoc";
 
 class Artist extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Artist extends Component {
       compilations: [],
       appearson: [],
       artist: "",
-      isLoading: true
+      isLoading: true,
+      isError: false
     };
   }
 
@@ -57,12 +59,12 @@ class Artist extends Component {
         }
       }
     )
-      .then(res => {
+      .then(async res => {
         if (res.status === 200) {
           return res.json();
         } else if (res.status === 401) {
           localStorage.removeItem("token");
-          console.log(res.json());
+          console.log(await res.json());
           throw new Error(res.text);
         }
       })
@@ -116,9 +118,12 @@ class Artist extends Component {
           isLoading: false
         });
       })
-      .catch(error => {
-        this.setState({ isLoading: false });
-        console.log(error);
+      .catch(e => {
+        console.log(e);
+        this.setState(state => ({
+          isError: !state.isError,
+          isLoading: !state.isLoading
+        }));
       });
   }
 
@@ -129,94 +134,94 @@ class Artist extends Component {
   };
 
   render() {
-    const {
-      albums,
-      singles,
-      artist,
-      isLoading,
-      compilations,
-      appearson
-    } = this.state;
-    if (isLoading) {
-      return "Loading...";
-    }
-    return (
-      <div className="artistPage">
-        <div className="artist-navbar">
-          <div className="artist-image">
-            {artist.images.length > 0 && (
-              <img src={artist.images[0].url} alt={artist.name}></img>
+    const ArtistPageLoaderHOC = pageLoaderHOC(ArtistDetails);
+    return <ArtistPageLoaderHOC {...this.state} />;
+  }
+}
+
+const ArtistDetails = ({
+  artist,
+  albums,
+  singles,
+  compilations,
+  appearson
+}) => {
+  return (
+    <div className="artistPage">
+      <div className="artist-navbar">
+        <div className="artist-image">
+          {artist.images.length > 0 && (
+            <img src={artist.images[0].url} alt={artist.name}></img>
+          )}
+        </div>
+        <div className="artist-name">{artist.name}</div>
+        {artist.genres.length > 0 && (
+          <div className="album-genres">
+            <div>Genres</div>
+            <ul>
+              {artist.genres.map(genre => (
+                <li key={genre}>{genre}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+      <div className="artist-main">
+        <div className="artist-info">
+          <div>Releases</div>
+
+          {/* artist albums */}
+          <div className="artist-albums">
+            {/* album releases */}
+            {albums.length > 0 && (
+              <div>
+                Albums
+                {albums.map(album => (
+                  <Album key={album.id} album={album} />
+                ))}
+              </div>
             )}
           </div>
-          <div className="artist-name">{artist.name}</div>
-          {artist.genres.length > 0 && (
-            <div className="album-genres">
-              <div>Genres</div>
-              <ul>
-                {artist.genres.map(genre => (
-                  <li key={genre}>{genre}</li>
+
+          {/* single releases */}
+          {singles.length > 0 && (
+            <div className="artist-singles">
+              <div>
+                Singles
+                {singles.map(single => (
+                  <Album key={single.id} album={single} />
                 ))}
-              </ul>
+              </div>
+            </div>
+          )}
+
+          {/* compilation releases */}
+          {compilations.length > 0 && (
+            <div className="artist-compilations">
+              <div>
+                Compilation
+                {compilations.map(compilation => (
+                  <Album key={compilation.id} album={compilation} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* appears on releases */}
+          {appearson.length > 0 && (
+            <div className="artist-appearson">
+              <div>
+                Appears On
+                {appearson.map(album => (
+                  <Album key={album.id} album={album} />
+                ))}
+              </div>
             </div>
           )}
         </div>
-        <div className="artist-main">
-          <div className="artist-info">
-            <div>Releases</div>
-
-            {/* artist albums */}
-            <div className="artist-albums">
-              {/* album releases */}
-              {albums.length > 0 && (
-                <div>
-                  Albums
-                  {albums.map(album => (
-                    <Album key={album.id} album={album} />
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* single releases */}
-            {singles.length > 0 && (
-              <div className="artist-singles">
-                <div>
-                  Singles
-                  {singles.map(single => (
-                    <Album key={single.id} album={single} />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* compilation releases */}
-            {compilations.length > 0 && (
-              <div className="artist-compilations">
-                <div>
-                  Compilation
-                  {compilations.map(compilation => (
-                    <Album key={compilation.id} album={compilation} />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* appears on releases */}
-            {appearson.length > 0 && (
-              <div className="artist-appearson">
-                <div>
-                  Appears On
-                  {appearson.map(album => (
-                    <Album key={album.id} album={album} />
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Artist;

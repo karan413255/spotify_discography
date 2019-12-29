@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import "../App.css";
 // import album from "../constants/album";
 import { Route, Link } from "react-router-dom";
+import pageLoaderHOC from "../components/hoc";
 
 class Album extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
+      isError: false,
       album: ""
     };
   }
@@ -40,71 +42,72 @@ class Album extends Component {
         this.setState({ album: res, isLoading: false });
       })
       .catch(error => {
-        this.setState({ isLoading: false });
+        this.setState({ isLoading: false, isError: true });
         console.log(error);
       });
   };
 
   render() {
-    const { isLoading, album } = this.state;
-    if (isLoading) {
-      return <div>Loading...</div>;
-    }
-    return (
-      <div className="albumPage">
-        <div className="album-navbar">
-          <div className="album-name">{album.name}</div>
-        </div>
-        <div className="album-main">
-          <div className="album-info">
-            <div className="album-image">
-              {album.images.length > 0 && (
-                <img src={album.images[0].url} alt={album.name}></img>
-              )}
-            </div>
-            <div className="album-artists">
-              <ul>
-                {album.artists.map(artist => (
-                  <Link key={artist.id} to={`/artist/${artist.id}`}>
-                    <li key={artist.id}>{artist.name}</li>
-                  </Link>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="album-tracks">
-            <ol>
-              {album.tracks.items.map(track => (
-                <li key={track.id}>{track.name}</li>
-              ))}
-            </ol>
-          </div>
-          <div className="album_date">{album.release_date}</div>
-          <div className="album_label">
-            <Route
-              render={({ history }) => (
-                <a
-                  href=""
-                  onClick={() => {
-                    history.push({
-                      pathname: "/search/",
-                      state: {
-                        searchValue: album.label,
-                        searchType: "Label"
-                      }
-                    });
-                  }}
-                >
-                  {album.label}
-                </a>
-              )}
-            ></Route>
-          </div>
-        </div>
-      </div>
-    );
+    const AlbumLoaderHOC = pageLoaderHOC(AlbumDetails);
+    return <AlbumLoaderHOC {...this.state} />;
   }
 }
+
+const AlbumDetails = ({ album }) => {
+  return (
+    <div className="albumPage">
+      <div className="album-navbar">
+        <div className="album-name">{album.name}</div>
+      </div>
+      <div className="album-main">
+        <div className="album-info">
+          <div className="album-image">
+            {album.images.length > 0 && (
+              <img src={album.images[0].url} alt={album.name}></img>
+            )}
+          </div>
+          <div className="album-artists">
+            <ul>
+              {album.artists.map(artist => (
+                <Link key={artist.id} to={`/artist/${artist.id}`}>
+                  <li key={artist.id}>{artist.name}</li>
+                </Link>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="album-tracks">
+          <ol>
+            {album.tracks.items.map(track => (
+              <li key={track.id}>{track.name}</li>
+            ))}
+          </ol>
+        </div>
+        <div className="album_date">{album.release_date}</div>
+        <div className="album_label">
+          <Route
+            render={({ history }) => (
+              <a
+                href=""
+                onClick={() => {
+                  history.push({
+                    pathname: "/search/",
+                    state: {
+                      searchValue: album.label,
+                      searchType: "Label"
+                    }
+                  });
+                }}
+              >
+                {album.label}
+              </a>
+            )}
+          ></Route>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Album;
