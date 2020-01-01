@@ -13,6 +13,7 @@ import "./App.css";
 import { SpotifyContext } from "./util/spotify_context";
 import Label from "./views/Label";
 import * as SpotifyWebApi from "spotify-web-api-js";
+import query_string from "query-string";
 
 const Home = ({ loggedIn }) => {
   return (
@@ -33,16 +34,44 @@ const Home = ({ loggedIn }) => {
 };
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loggedIn: "",
-      spotify: new SpotifyWebApi()
-    };
-  }
+  state = {
+    loggedIn: "",
+    spotify: new SpotifyWebApi(),
+    loading: false
+  };
 
-  componentDidMount() {
+  async componentDidMount() {
+    this.setState({ loading: true });
+    console.log("App loading");
     let token = localStorage.getItem("token");
+    console.log(`token ${token}`);
+    let refreshToken = localStorage.getItem("refresh_token");
+    console.log(`refresh token ${refreshToken}`);
+    if (refreshToken) {
+      console.log("Calling refresh token");
+      let query = {
+        refresh_token: refreshToken
+      };
+      let response = await fetch(
+        "http://localhost:8888/refresh_token?" + query_string.stringify(query)
+      );
+      if (response.status === 200) {
+        let data = await response.json();
+        console.log(`refresh token response: ${data}`);
+        console.log(data);
+        token = data.access_token;
+        if (token) {
+          this.setState({ loggedIn: true });
+          console.log("has token");
+          localStorage.setItem("refresh_token", refreshToken);
+          localStorage.setItem("token", token);
+          this.state.spotify.setAccessToken(token);
+          // console.log(this.state.spotify.getAccessToken());
+        }
+      } else {
+        console.log("Could not refresh token. Continuing normal flow");
+      }
+    }
     if (token) {
       this.setState({ loggedIn: true });
       console.log("has token");
@@ -50,23 +79,27 @@ class App extends Component {
       console.log(this.state.spotify.getAccessToken());
     }
     const params = this.getHashParams();
-    const refreshToken = params.refresh_token;
+    refreshToken = params.refresh_token;
     const error = params.error;
     let shouldLogin = params.invalid_token;
     console.log(shouldLogin);
     if (shouldLogin) {
       localStorage.removeItem("token");
     }
-    console.log(localStorage.getItem("token"));
+    // console.log(localStorage.getItem("token"));
     if (params.access_token) {
       token = params.access_token;
-      localStorage.setItem("token", params.access_token);
-      console.log(params.access_token);
+      localStorage.setItem("token", token);
+      console.log(token);
       this.setState({ loggedIn: true });
+    }
+    if (params.refreshToken) {
+      localStorage.setItem("refresh_token", refreshToken);
     }
     if (!token) {
       this.setState({ loggedIn: false });
     }
+    this.setState({ loading: false });
   }
 
   getHashParams() {
@@ -94,6 +127,9 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return <div>Loading...</div>;
+    }
     return (
       <Router>
         <div className="spotify-discography-home">
@@ -108,7 +144,7 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/search/"
+                path="/search"
                 render={routeProps => <SearchSpotify {...routeProps} />}
               />
               <Route
