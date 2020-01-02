@@ -20,31 +20,61 @@ import { Redirect } from "react-router-dom";
 
 // export { LoadingComponent, ErrorComponent };
 
-const pageLoaderHOC = Component => {
-  return class PageLoader extends React.Component {
-    render() {
-      if (this.props.isLoading) {
-        return <div>Loading....</div>;
-      }
-      if (this.props.isError) {
-        return <Redirect to="/" />;
-      }
+// HOC
+// const pageLoaderHOC = Component => {
+//   return class PageLoader extends React.Component {
+//     render() {
+//       if (this.props.isLoading) {
+//         return <div>Loading....</div>;
+//       }
+//       if (this.props.isError) {
+//         return <Redirect to="/" />;
+//       }
 
-      return <Component {...this.props} />;
-    }
-  };
+//       return <Component {...this.props} />;
+//     }
+//   };
+// };
+
+const pageLoaderHOC = Component => ({ isLoading, isError, ...others }) => {
+  return isLoading ? (
+    <div>Loading....</div>
+  ) : isError ? (
+    <Redirect to="/" />
+  ) : (
+    <Component {...others} />
+  );
 };
 
-// const withPageLoader = Component => ({ isLoading, isError, ...others }) =>
-//   isLoading ? (
-//     <div>Loading....</div>
-//   ) : isError ? (
-//     <Redirect to="/#invalid_token=true" />
-//   ) : (
-//     <Component {...others} />
-//   );
-
 export default pageLoaderHOC;
+
+// Render Props
+
+class PageLoaderRenderProps extends React.Component {
+  render() {
+    const { isLoading, isError } = this.props;
+    if (isLoading) {
+      return <div>Loading....</div>;
+    }
+    if (isError) {
+      return <Redirect to="/" />;
+    }
+    return this.props.children(this.props);
+  }
+}
+
+// const PageLoaderRenderProps = props => {
+//   const { isLoading, isError, ...others } = props;
+//   return props.isLoading ? (
+//     <div>Loading....</div>
+//   ) : props.isError ? (
+//     <Redirect to="/" />
+//   ) : (
+//     props.children(...others)
+//   );
+// };
+
+export { PageLoaderRenderProps };
 
 /* Page Loader HOC
   -- loader
