@@ -19,9 +19,7 @@ const Home = ({ loggedIn }) => {
   return (
     <div>
       {loggedIn ? (
-        <div className="search-box">
-          <Redirect to="/search" />
-        </div>
+        <Redirect to="/search" />
       ) : (
         <div className="search-box">
           <a href="http://localhost:8888/login">

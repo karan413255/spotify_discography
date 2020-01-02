@@ -22,8 +22,8 @@ class SearchSpotify extends Component {
       searchType: this.props.location.state
         ? this.props.location.state.searchType
           ? this.props.location.state.searchType
-          : "Label"
-        : "Label",
+          : ""
+        : "",
       artistList: [],
       albumsList: [],
       isError: false,
@@ -154,7 +154,7 @@ const SearchPage = ({ labelsList, artistList, searchType }) => {
       {/* labels list */}
       {searchType === "Label" ? (
         <div className="search-label">
-          <h3 className="search-label--header">Labels</h3>
+          {labelsList ? <h3 className="search-label--header">Labels</h3> : null}
           <div className="search-label--widget">
             {labelsList
               ? labelsList.map(label => <Label key={label.id} label={label} />)
@@ -177,7 +177,9 @@ const SearchPage = ({ labelsList, artistList, searchType }) => {
       {/* artist list */}
       {searchType === "Artist" ? (
         <div className="search-artist">
-          <h3 className="search-artist--header">Artists</h3>
+          {artistList ? (
+            <h3 className="search-artist--header">Artists</h3>
+          ) : null}
           <div className="search-artist--widget">
             {artistList
               ? artistList.map(artist => (

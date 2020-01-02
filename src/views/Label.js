@@ -7,7 +7,7 @@ import AlbumList from "../components/album_list";
 import Artist from "../components/artist";
 import query_string from "query-string";
 import { Route, Redirect } from "react-router-dom";
-import pageLoaderHOC from "../components/hoc";
+import pageLoaderHOC, { PageLoaderRenderProps } from "../components/hoc";
 
 export default class Label extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export default class Label extends Component {
       compilations: [],
       artists: [],
       label: null,
-      isLoading: false,
+      isLoading: true,
       isError: false
     };
   }
@@ -55,9 +55,9 @@ export default class Label extends Component {
   };
 
   getLabelDetails = () => {
-    this.setState(state => ({
-      isLoading: !state.isLoading
-    }));
+    this.setState({
+      isLoading: true
+    });
     const token = localStorage.getItem("token");
     fetch("https://api.discogs.com/labels/" + this.props.match.params.id, {
       method: "GET",
@@ -101,22 +101,8 @@ export default class Label extends Component {
               return res.json();
             } else if (res.status === 401) {
               localStorage.removeItem("token");
-              // let refershToken = localStorage.getItem("refresh_token");
-              // if (!refershToken) {
-              //   let response;
-              //   query = {
-              //     refresh_token: refershToken
-              //   };
-              //   response = await fetch(
-              //     "http://localhost:8888/refresh_token?" +
-              //       query_string.stringify(query),
-              //     {
-              //       method: "GET"
-              //     }
-              //   );
-              // }
               await res.json();
-              console.log(res.json());
+              console.error(res.json());
               throw new Error("invalid token");
             }
           })
@@ -187,24 +173,29 @@ export default class Label extends Component {
             console.log("artists");
             console.log(artists.length);
             this.setState({ albums, singles, compilations, artists });
-            this.setState(state => ({
-              isLoading: !state.isLoading
-            }));
+            this.setState({
+              isLoading: false
+            });
           })
           .catch(e => {
-            console.log(e);
-            this.setState(state => ({
-              isError: !state.isError,
-              isLoading: !state.isLoading
-            }));
+            console.error(e);
+            this.setState({
+              isError: true,
+              isLoading: false
+            });
           });
       })
-      .catch(e => console.log(e));
+      .catch(e => console.error(e));
   };
 
   render() {
     const LabelPageLoaderHOC = pageLoaderHOC(LabelDetails);
     return <LabelPageLoaderHOC {...this.state} />;
+    // return (
+    //   <PageLoaderRenderProps {...this.state}>
+    //     {props => <LabelDetails {...props} />}
+    //   </PageLoaderRenderProps>
+    // );
   }
 }
 
