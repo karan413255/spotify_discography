@@ -1,11 +1,11 @@
 import React from "react";
 import "../App.css";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
-function Artist({ artist }) {
+const Artist = ({ artist }) => {
   return (
     <div className="artist">
-      <Route
+      {/* <Route
         render={({ history }) => (
           <a href="" onClick={() => history.push(`/artist/${artist.id}`)}>
             {artist.images.length > 0 && (
@@ -14,9 +14,15 @@ function Artist({ artist }) {
             <div className="artistName">{artist.name}</div>
           </a>
         )}
-      ></Route>
+      ></Route> */}
+      <Link to={`/artist/${artist.id}`}>
+        {artist.images.length > 0 && (
+          <img className="artistImage" alt="" src={artist.images[0].url} />
+        )}
+        <div className="artistName">{artist.name}</div>
+      </Link>
     </div>
   );
-}
+};
 
 export default Artist;

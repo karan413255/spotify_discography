@@ -17,7 +17,12 @@ function Album({ album }) {
       ></Route> */}
       <Link to={`/album/${album.id}`}>
         {album.images.length > 0 && (
-          <img className="albumImage" alt="" src={album.images[0].url} />
+          <img
+            className="albumImage"
+            alt=""
+            src={album.images[0].url}
+            // loading="lazy"
+          />
         )}
         <div className="albumName">{album.name}</div>
       </Link>
